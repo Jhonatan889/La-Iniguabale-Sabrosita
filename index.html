@@ -33,6 +33,7 @@
       color: var(--texto);
       overflow-x:hidden;
     }
+
     /* ══════════ HEADER ══════════ */
     header{
       display:flex;
@@ -84,6 +85,7 @@
     }
     nav a:hover { color: var(--dorado); text-shadow: 0 0 20px rgba(212,160,23,0.5); }
     nav a:hover::after { width:100%; }
+
     /* Hamburger */
     .hamburger {
       display:none;
@@ -104,6 +106,7 @@
     .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2){ opacity:0; }
     .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
     /* Mobile menu */
     .mobile-menu {
       display:none;
@@ -138,6 +141,7 @@
       gap:10px;
     }
     .mobile-menu .wa-btn-mobile svg { width:22px;height:22px;fill:white; }
+
     /* ══════════ HERO ══════════ */
     .hero{
       min-height:100vh;
@@ -208,15 +212,16 @@
     }
     .hero-deco {
       position:absolute;
-      right: 60px;
-      top:50%;
+      right: 20px;
+      top:38%;
       transform:translateY(-50%);
       text-align:center;
       animation: fadeUp 1s ease 0.6s both;
+      z-index:1;
     }
     .hero-deco-circle {
-      width:320px;
-      height:320px;
+      width:310px;
+      height:310px;
       border-radius:50%;
       border:2px solid rgba(212,160,23,0.3);
       display:flex;
@@ -235,9 +240,9 @@
       border:1px dashed rgba(212,160,23,0.2);
       animation: spin 20s linear infinite;
     }
-    .hero-deco-emoji { font-size:5em; margin-bottom:10px; }
+    .hero-deco-emoji { font-size:6em; margin-bottom:10px; }
     .hero-deco-years {
-      font-size:3em;
+      font-size:3.5em;
       font-weight:900;
       color: var(--dorado);
       line-height:1;
@@ -249,6 +254,7 @@
       from { opacity:0; transform: scale(0.5); }
       to   { opacity:1; transform: scale(1); }
     }
+
     /* ══════════ BOTONES ══════════ */
     .btn{
       padding:14px 32px;
@@ -300,10 +306,11 @@
       box-shadow: 0 8px 25px rgba(37,211,102,0.4);
     }
     .btn-whatsapp svg, .wa-icon{ width:20px;height:20px;fill:currentColor;flex-shrink:0; }
+
     /* ══════════ FEATURES ══════════ */
     .features{
       padding:0 40px 60px;
-      margin-top:-70px;
+      margin-top:-20px;
       display:flex;
       gap:20px;
       justify-content:center;
@@ -348,6 +355,7 @@
       margin-bottom:10px;
     }
     .feature-card p { color:var(--gris); font-size:0.92em; line-height:1.6; }
+
     /* ══════════ STATS STRIP ══════════ */
     .stats-strip {
       display: flex;
@@ -389,6 +397,7 @@
       background: rgba(212,160,23,0.2);
       flex-shrink: 0;
     }
+
     /* ══════════ SECCIONES ══════════ */
     .section { padding:80px 60px; }
     .section-header {
@@ -418,6 +427,7 @@
       margin:15px auto;
       border-radius:2px;
     }
+
     /* ══════════ NOSOTROS ══════════ */
     #nosotros {
       background: linear-gradient(180deg, transparent, rgba(192,57,43,0.04) 50%, transparent);
@@ -478,6 +488,7 @@
       line-height: 1.75;
     }
     .rellena-desc strong { color: var(--dorado); }
+
     /* Nosotros features grid */
     .nosotros-features {
       display: grid;
@@ -507,6 +518,7 @@
       margin-bottom: 8px;
     }
     .nosotros-feature-card p { color: var(--gris); font-size: 0.85em; line-height: 1.6; }
+
     /* ══════════ PRODUCTOS ══════════ */
     #productos { background: linear-gradient(180deg, transparent, rgba(192,57,43,0.04) 50%, transparent); }
     .productos-grid {
@@ -671,6 +683,7 @@
       z-index:3;
     }
     .producto-card.card-presentacion .producto-img-titulo h3 { font-size:1.3em; }
+
     /* ══════════ DOMICILIOS ══════════ */
     .domicilios {
       background: rgba(255,255,255,0.02);
@@ -757,6 +770,7 @@
     .pago-step:nth-child(2) .step-num { animation: stepPop 0.5s 0.5s both; }
     .pago-step:nth-child(3) .step-num { animation: stepPop 0.5s 0.7s both; }
     .pago-step:nth-child(4) .step-num { animation: stepPop 0.5s 0.9s both; }
+
     /* ══════════ CONTACTO ══════════ */
     .contacto-grid {
       display:grid;
@@ -919,6 +933,7 @@
       height:2px;
       background: linear-gradient(to right, rgba(212,160,23,0.5), transparent);
     }
+
     /* ══════════ FOOTER ══════════ */
     footer {
       padding:40px 60px;
@@ -939,6 +954,7 @@
     .footer-copy { color:var(--gris); font-size:0.85em; }
     .footer-links a { color:var(--gris); text-decoration:none; margin-left:20px; font-size:0.85em; transition:color 0.3s; }
     .footer-links a:hover { color: var(--dorado); }
+
     /* ══════════ WA FLOAT ══════════ */
     .whatsapp-float {
       position:fixed;
@@ -975,6 +991,7 @@
       border:6px solid transparent; border-left-color:white;
     }
     .whatsapp-float:hover .wa-float-tip { opacity:1; visibility:visible; }
+
     /* ══════════ ANIMACIONES ══════════ */
     @keyframes fadeUp {
       from { opacity:0; transform:translateY(30px); }
@@ -999,6 +1016,7 @@
     }
     .reveal { opacity:0; transform:translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
+
     /* Separador */
     .section-sep {
       display:flex;
@@ -1023,6 +1041,7 @@
       background: linear-gradient(to right, var(--dorado), transparent);
       margin:18px 0;
     }
+
     /* ══════════ RESPONSIVE ══════════ */
     @media(max-width:1100px){
       .productos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1034,7 +1053,22 @@
       .hamburger { display:flex; }
       .hero  { padding:100px 25px 60px; }
       .hero h1 { font-size:2.4em; }
-      .hero-deco { display:none; }
+      .hero-deco {
+        position:relative;
+        right:auto;
+        top:auto;
+        transform:none;
+        margin: 20px auto 0;
+        display:flex;
+        justify-content:center;
+      }
+      .hero-deco-circle {
+        width:180px;
+        height:180px;
+      }
+      .hero-deco-emoji { font-size:3em; }
+      .hero-deco-years { font-size:2em; }
+      .hero-deco-label { font-size:0.65em; }
       .domicilios-grid, .contacto-grid { grid-template-columns:1fr; }
       .section { padding:60px 25px; }
       #nosotros { padding:60px 25px; }
@@ -1064,7 +1098,7 @@
       .hero-badge { font-size:0.7em; padding:5px 14px; }
       .hero-btns { flex-direction:column; }
       .hero-btns .btn { text-align:center; justify-content:center; }
-      .features { flex-direction:column; align-items:center; padding:0 18px 40px; }
+      .features { flex-direction:column; align-items:center; padding:20px 18px 40px; margin-top:20px; }
       .feature-card { width:100%; max-width:320px; }
       .section-header h2 { font-size:2em; }
       .contacto-info h3 { font-size:1.4em; }
@@ -1072,6 +1106,7 @@
   </style>
 </head>
 <body>
+
 <!-- ══ MOBILE MENU ══ -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#inicio"     onclick="closeMobile()">Inicio</a>
@@ -1083,6 +1118,7 @@
     Pedir Ahora
   </a>
 </div>
+
 <!-- ══ HEADER ══ -->
 <header id="site-header">
   <div class="logo">
@@ -1099,6 +1135,7 @@
     <span></span><span></span><span></span>
   </button>
 </header>
+
 <!-- ══ HERO ══ -->
 <section class="hero" id="inicio">
   <div class="hero-content">
@@ -1123,6 +1160,7 @@
     </div>
   </div>
 </section>
+
 <!-- ══ FEATURES ══ -->
 <section class="features">
   <div class="feature-card">
@@ -1146,6 +1184,7 @@
     <p>15 años de clientes felices avalan nuestro sabor único e inigualable.</p>
   </div>
 </section>
+
 <!-- ══ STATS STRIP ══ -->
 <div class="stats-strip">
   <div class="stat-item reveal">
@@ -1168,7 +1207,9 @@
     <div class="stat-label">Receta exclusiva</div>
   </div>
 </div>
+
 <div class="section-sep">✦ ✦ ✦</div>
+
 <!-- ══ NOSOTROS ══ -->
 <section id="nosotros">
   <div class="section-header">
@@ -1177,6 +1218,7 @@
     <div class="divider"></div>
     <p>Un plato icónico de la gastronomía colombiana, rico en especias y tradición andina.</p>
   </div>
+
   <div class="rellena-info-block reveal">
     <div class="rellena-info-inner">
       <div class="rellena-info-icon">🐷</div>
@@ -1186,6 +1228,7 @@
       </div>
     </div>
   </div>
+
   <div class="nosotros-features">
     <div class="nosotros-feature-card reveal">
       <div class="nf-icon">🌿</div>
@@ -1209,7 +1252,9 @@
     </div>
   </div>
 </section>
+
 <div class="section-sep">✦ ✦ ✦</div>
+
 <!-- ══ PRODUCTOS ══ -->
 <section class="section" id="productos">
   <div class="section-header">
@@ -1219,11 +1264,12 @@
     <p>La rellena es un icónico plato tradicional de la gastronomía colombiana, especialmente popular en la región andina. Se trata de una morcilla elaborada con vísceras de cerdo, arroz, cebolla, hierbabuena y una generosa mezcla de especias que le dan su sabor único e inconfundible.</p>
     <p class="section-p2">En <strong>La Sabrosita</strong>, preparamos nuestra rellena con los mejores ingredientes frescos, respetando la receta tradicional para ofrecerte una experiencia gastronómica auténtica y llena de sabor.</p>
   </div>
+
   <div class="productos-grid">
     <!-- Producto 1 -->
     <div class="producto-card reveal">
       <div class="producto-img-wrap">
-        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGAAcADASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAAQDBQYCAQcI/8QAThAAAQMDAgMFBQQGBwYEBwAAAQIDBAURIRIxBhNBUWEicYGRFDKhscHR8AcjQlJicoLhFSQzY5KistJDc4OT8RYlNFSUo8I1REVTk//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACcRAAICAgIBBAMBAQAAAAAAAAABAhEDIRIxBBMiQVEyFGEFI0L/2gAMAwEAAhEDEQA..." alt="Morcilla Delgada - Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
+        <img src="rellena-delgada.png" alt="Morcilla Delgada - Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
         <div class="producto-img-overlay"></div>
         <span class="star-badge">⭐ Más vendida</span>
         <div class="producto-img-titulo">
@@ -1245,10 +1291,11 @@
         </a>
       </div>
     </div>
+
     <!-- Producto 2 -->
     <div class="producto-card reveal">
       <div class="producto-img-wrap">
-        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGAAcADASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAAQDBQYCAQcI/8QAThAAAQMDAgMFBQQGBwYEBwAAAQIDBAURIRIxBhNBUWEicYGRFDKhscHR8AcjQlJicoLhFSQzY5KistJDc4OT8RYlNFSUo8I1REVTk//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACcRAAICAgIBBAMBAQAAAAAAAAABAhEDIRIxBBMiQVEyFGEFI0L/2gAMAwEAAhEDEQA..." alt="Morcilla Gruesa El Obispo - Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
+        <img src="rellena-obispo.png" alt="Morcilla Gruesa El Obispo - Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
         <div class="producto-img-overlay"></div>
         <div class="producto-img-titulo">
           <div class="producto-tipo">Presentación premium</div>
@@ -1269,14 +1316,15 @@
         </a>
       </div>
     </div>
+
     <!-- Producto 3 -->
     <div class="producto-card card-presentacion reveal">
       <div class="producto-img-wrap">
-        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGAAcADASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAAQDBQYCAQcI/8QAThAAAQMDAgMFBQQGBwYEBwAAAQIDBAURIRIxBhNBUWEicYGRFDKhscHR8AcjQlJicoLhFSQzY5KistJDc4OT8RYlNFSUo8I1REVTk//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACcRAAICAgIBBAMBAQAAAAAAAAABAhEDIRIxBBMiQVEyFGEFI0L/2gAMAwEAAhEDEQA..." alt="Presentaciones de Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
+        <img src="la-rellena.png" alt="La Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
         <div class="producto-img-overlay"></div>
         <div class="producto-img-titulo">
           <div class="producto-tipo">Versatilidad</div>
-          <h3>¿Cómo la prefieres?</h3>
+          <h3>La Rellena</h3>
         </div>
       </div>
       <div class="producto-info">
@@ -1295,7 +1343,9 @@
     </div>
   </div>
 </section>
+
 <div class="section-sep">✦ ✦ ✦</div>
+
 <!-- ══ DOMICILIOS ══ -->
 <section class="section domicilios" id="domicilios">
   <div class="section-header">
@@ -1338,6 +1388,7 @@
     </div>
   </div>
 </section>
+
 <!-- ══ CONTACTO ══ -->
 <section class="section" id="contacto">
   <div class="section-header">
@@ -1431,6 +1482,7 @@
     </div>
   </div>
 </section>
+
 <!-- ══ FOOTER ══ -->
 <hr class="footer-divider"/>
 <footer>
@@ -1443,14 +1495,17 @@
     <a href="#contacto">Contacto</a>
   </div>
 </footer>
+
 <!-- ══ WA FLOTANTE ══ -->
 <a class="whatsapp-float" href="https://wa.me/57TUNUMERO?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional%20🐷" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
   <span class="wa-float-tip">¡Haz tu pedido aquí! 🐷</span>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
 <script>
 (function() {
   'use strict';
+
   // Formulario enviado
   if (window.location.search.includes('enviado=1') || document.referrer.includes('formsubmit.co')) {
     var form = document.getElementById('contactForm');
@@ -1466,6 +1521,7 @@
     var nextInput = formEl.querySelector('input[name="_next"]');
     if (nextInput) nextInput.value = window.location.origin + window.location.pathname + '?enviado=1#contacto';
   }
+
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
@@ -1475,6 +1531,7 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth' }); }
     });
   });
+
   // Hamburger menu
   var ham = document.getElementById('hamburger');
   var mob = document.getElementById('mobileMenu');
@@ -1489,9 +1546,11 @@
     if (mob) mob.classList.remove('open');
   }
   window.closeMobile = closeMobile;
+
   // Scroll reveal
   var revealEls = document.querySelectorAll('.feature-card, .producto-card, .contacto-dato, .pago-card, .domicilios-info, .wa-cta-box, .rellena-info-block, .zona-chip, .stat-item, .nosotros-feature-card');
   revealEls.forEach(function(el) { el.classList.add('reveal'); });
+
   // Stagger delays
   document.querySelectorAll('.stat-item').forEach(function(el, i) {
     el.style.transitionDelay = (i * 0.12) + 's';
@@ -1505,6 +1564,7 @@
   document.querySelectorAll('.nosotros-feature-card').forEach(function(el, i) {
     el.style.transitionDelay = (i * 0.1) + 's';
   });
+
   function checkReveal() {
     revealEls.forEach(function(el) {
       var rect = el.getBoundingClientRect();
@@ -1513,6 +1573,7 @@
   }
   window.addEventListener('scroll', checkReveal);
   checkReveal();
+
   // Header scroll
   var header = document.getElementById('site-header');
   window.addEventListener('scroll', function() {
@@ -1525,6 +1586,7 @@
       header.style.boxShadow = 'none';
     }
   });
+
 })();
 </script>
 </body>
