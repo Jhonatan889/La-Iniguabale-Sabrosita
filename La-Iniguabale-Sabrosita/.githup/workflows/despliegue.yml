@@ -1,0 +1,22 @@
+name: Despliegue Automático a InfinityFree
+
+on:
+  push:
+    branches:
+      - main  # <--- Si tu rama se llama "master" o "practicas", cámbialo aquí
+
+jobs:
+  web-deploy:
+    name: Subiendo archivos por FTP
+    runs-on: ubuntu-latest
+    steps:
+    - name: Descargando el código de GitHub
+      uses: actions/checkout@v3
+    
+    - name: Sincronizando con InfinityFree
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /htdocs/  # <--- InfinityFree usa la carpeta htdocs obligatoriamente
