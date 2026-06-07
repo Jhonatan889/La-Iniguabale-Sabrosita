@@ -1,1892 +1,1677 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="La rellena artesanal más sabrosa de Bogotá. Preparada con receta propia, ingredientes frescos y 15 años de tradición colombiana. Domicilios a Bogotá, Soacha y alrededores."/>
-  <meta name="keywords" content="rellena tradicional, morcilla bogota, rellena artesanal, rellena domicilio bogota, rellena soacha, morcilla colombiana, rellena inigualable sabrosita, morcilla artesanal bogota, rellena casera"/>
-  <meta name="author" content="Rellena Tradicional La Inigualable Sabrosita"/>
-  <meta name="google-site-verification" content="UJWSK11DFKZiKnpMS4OC4IbSV-cDY_4zuqp0UFT-Nx0" />
-  <meta property="og:title" content="Rellena Tradicional | La Inigualable Sabrosita"/>
-  <meta property="og:description" content="La rellena artesanal más sabrosa de Bogotá. 15 años de tradición colombiana. Domicilios disponibles."/>
-  <meta property="og:type" content="website"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La rellena artesanal más sabrosa de Bogotá. Preparada con tradición, sabor y calidad." />
   <title>Rellena Tradicional | La Inigualable Sabrosita</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --rojo:     #c0392b;
-      --rojo-osc: #922b21;
-      --dorado:   #d4a017;
+      --rojo: #c0392b;
+      --dorado: #d4a017;
       --dorado-claro: #f0c040;
-      --crema:    #fdf6ec;
-      --oscuro:   #1a0a00;
-      --texto:    #f5e6d3;
-      --gris:     #b8a090;
+      --oscuro: #1a0a00;
+      --texto: #f5e6d3;
+      --gris: #b8a090;
       --verde-wa: #25d366;
     }
+
     html { scroll-behavior: smooth; }
-    body{
-      font-family:'Lato',sans-serif;
+
+    body {
+      font-family: 'Lato', sans-serif;
       background: var(--oscuro);
       color: var(--texto);
-      overflow-x:hidden;
+      overflow-x: hidden;
     }
 
-    /* ══════════ HEADER ══════════ */
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:22px 60px;
-      position:fixed;
-      width:100%;
-      z-index:100;
-      background: linear-gradient(to bottom, rgba(26,10,0,0.95), transparent);
-      transition: background 0.4s, box-shadow 0.4s;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(26, 10, 0, 0.95), transparent);
       backdrop-filter: blur(6px);
-    }
-    .logo {
-      display:flex;
-      flex-direction:column;
-      line-height:1;
-    }
-    .logo-main {
-      font-family:'Playfair Display', serif;
-      font-size:1.5em;
-      font-weight:900;
-      color: var(--dorado);
-      letter-spacing:1px;
-    }
-    .logo-sub {
-      font-size:0.7em;
-      color: var(--gris);
-      letter-spacing:3px;
-      text-transform:uppercase;
-    }
-    nav a{
-      color: var(--texto);
-      margin-left:30px;
-      text-decoration:none;
-      font-size:0.92em;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      transition:color 0.3s, text-shadow 0.3s;
-      position:relative;
-    }
-    nav a::after {
-      content:'';
-      position:absolute;
-      bottom:-4px; left:0;
-      width:0; height:2px;
-      background: var(--dorado);
-      transition: width 0.3s;
-    }
-    nav a:hover { color: var(--dorado); text-shadow: 0 0 20px rgba(212,160,23,0.5); }
-    nav a:hover::after { width:100%; }
-
-    /* Hamburger */
-    .hamburger {
-      display:none;
-      flex-direction:column;
-      gap:5px;
-      cursor:pointer;
-      padding:6px;
-      background:none;
-      border:none;
-    }
-    .hamburger span {
-      display:block;
-      width:26px; height:2px;
-      background:var(--texto);
-      border-radius:2px;
       transition: all 0.3s;
     }
-    .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2){ opacity:0; }
-    .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .logo-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--dorado);
+      line-height: 0.95;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-sub {
+      font-size: 0.73rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-left: 2px;
+    }
 
-    /* Mobile menu */
+    nav a {
+      color: var(--texto);
+      text-decoration: none;
+      margin-left: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    nav a:hover { color: var(--dorado); }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--dorado);
+      transition: width 0.25s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 26px;
+      height: 2px;
+      border-radius: 2px;
+      background: #fff;
+      transition: 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     .mobile-menu {
-      display:none;
-      position:fixed;
-      top:0; left:0; right:0; bottom:0;
-      background:rgba(26,10,0,0.98);
-      z-index:99;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:36px;
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(26, 10, 0, 0.97);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 28px;
     }
-    .mobile-menu.open { display:flex; }
+    .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      font-family:'Playfair Display',serif;
-      font-size:2rem;
-      color:var(--texto);
-      text-decoration:none;
-      transition:color 0.3s;
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
     }
-    .mobile-menu a:hover { color:var(--dorado); }
     .mobile-menu .wa-btn-mobile {
       background: var(--verde-wa);
-      color:white;
-      padding:14px 36px;
-      border-radius:50px;
-      font-family:'Lato',sans-serif;
-      font-size:1rem;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      gap:10px;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
-    .mobile-menu .wa-btn-mobile svg { width:22px;height:22px;fill:white; }
 
-    /* ══════════ HERO ══════════ */
-    .hero{
-      min-height:100vh;
-      background-color: #3d0c00;
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(192,57,43,0.45) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(212,160,23,0.22) 0%, transparent 50%),
-        linear-gradient(to bottom right, #1a0a00 0%, #3d1500 50%, #1a0a00 100%);
-      display:flex;
-      align-items:center;
-      padding:120px 60px 80px;
-      position:relative;
-      overflow:hidden;
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 120px 30px 80px;
+      overflow: hidden;
+      background: #2a0f04;
     }
-    .hero::before {
-      content:'';
-      position:absolute;
-      inset:0;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events:none;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.62);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(26, 10, 0, 0.92) 20%, rgba(44, 13, 2, 0.6) 62%, rgba(26, 10, 0, 0.78) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
     }
     .hero-badge {
-      display:inline-block;
-      background: rgba(212,160,23,0.15);
-      border:1px solid rgba(212,160,23,0.4);
+      display: inline-block;
+      border: 1px solid rgba(212, 160, 23, 0.5);
+      border-radius: 999px;
       color: var(--dorado);
-      padding:6px 18px;
-      border-radius:20px;
-      font-size:0.8em;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:20px;
-      animation: fadeUp 0.8s ease both, badgePulse 2.5s 1s infinite;
+      background: rgba(212, 160, 23, 0.15);
+      padding: 7px 16px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
-    .hero-content{
-      max-width:650px;
-      position:relative;
-      z-index:2;
-    }
-    .hero h1{
-      font-family:'Playfair Display', serif;
-      font-size:3.8em;
-      font-weight:900;
-      line-height:1.1;
-      margin-bottom:10px;
-      animation: fadeUp 0.8s ease 0.2s both;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.3rem, 6vw, 5.2rem);
+      line-height: 1.04;
+      margin-bottom: 8px;
     }
     .hero h1 span { color: var(--dorado); }
     .hero-subtitle {
-      font-size:1.2em;
+      font-size: 2rem;
+      font-style: italic;
       color: var(--dorado);
-      font-style:italic;
-      margin-bottom:18px;
-      animation: fadeUp 0.8s ease 0.3s both;
+      margin-bottom: 18px;
+      font-family: 'Playfair Display', serif;
     }
-    .hero p{
-      color: var(--gris);
-      margin-bottom:35px;
-      font-size:1.05em;
-      line-height:1.7;
-      animation: fadeUp 0.8s ease 0.4s both;
+    .hero-line {
+      width: 80px;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(to right, var(--dorado), transparent);
+      margin-bottom: 20px;
     }
-    .hero-btns {
-      animation: fadeUp 0.8s ease 0.5s both;
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
+    .hero p {
+      color: #f0deca;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 650px;
+      margin-bottom: 30px;
     }
-    .hero-deco {
-      position:absolute;
-      right: 20px;
-      top:38%;
-      transform:translateY(-50%);
-      text-align:center;
-      animation: fadeUp 1s ease 0.6s both;
-      z-index:1;
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 13px 24px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid transparent;
+      transition: 0.3s;
     }
-    .hero-deco-circle {
-      width:310px;
-      height:310px;
-      border-radius:50%;
-      border:2px solid rgba(212,160,23,0.3);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      background: rgba(192,57,43,0.12);
-      backdrop-filter:blur(8px);
-      position:relative;
+    .btn-whatsapp {
+      background: var(--verde-wa);
+      color: #fff;
     }
-    .hero-deco-circle::before {
-      content:'';
-      position:absolute;
-      inset:-15px;
-      border-radius:50%;
-      border:1px dashed rgba(212,160,23,0.2);
-      animation: spin 20s linear infinite;
-    }
-    .hero-deco-emoji { font-size:6em; margin-bottom:10px; }
-    .hero-deco-years {
-      font-size:3.5em;
-      font-weight:900;
+    .btn-whatsapp:hover { background: #1ca855; transform: translateY(-2px); }
+    .btn-outline {
+      border-color: var(--dorado);
       color: var(--dorado);
-      line-height:1;
-      animation: countUp 1s cubic-bezier(0.34,1.56,0.64,1) 0.8s both;
+      background: transparent;
     }
-    .hero-deco-label { font-size:0.75em; color:var(--gris); letter-spacing:2px; text-transform:uppercase; }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    @keyframes countUp {
-      from { opacity:0; transform: scale(0.5); }
-      to   { opacity:1; transform: scale(1); }
-    }
-
-    /* ══════════ BOTONES ══════════ */
-    .btn{
-      padding:14px 32px;
-      border-radius:8px;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      transition:all 0.3s;
-      font-size:0.9em;
-      font-weight:600;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      cursor:pointer;
-    }
-    .btn-primary{
-      background: var(--rojo);
-      color:white;
-      border:2px solid var(--rojo);
-    }
-    .btn-primary:hover{
-      background: var(--rojo-osc);
-      border-color: var(--rojo-osc);
-      transform:translateY(-2px);
-      box-shadow: 0 8px 25px rgba(192,57,43,0.4);
-    }
-    .btn-outline{
-      border:2px solid var(--dorado);
-      color: var(--dorado);
-      background:transparent;
-    }
-    .btn-outline:hover{
+    .btn-outline:hover {
       background: var(--dorado);
       color: var(--oscuro);
-      transform:translateY(-2px);
-      box-shadow: 0 0 20px rgba(212,160,23,0.35);
-    }
-    .btn-whatsapp{
-      background-size: 200% auto;
-      background-image: linear-gradient(90deg, #25d366 0%, #2ecc71 40%, #1ebe5e 60%, #25d366 100%);
-      animation: shimmer 3s linear infinite;
-      color:white;
-      border:2px solid transparent;
-    }
-    .btn-whatsapp:hover{
-      background: #1da851;
-      border-color: #1da851;
-      transform:translateY(-2px);
-      box-shadow: 0 8px 25px rgba(37,211,102,0.4);
-    }
-    .btn-whatsapp svg, .wa-icon{ width:20px;height:20px;fill:currentColor;flex-shrink:0; }
-
-    /* ══════════ FEATURES ══════════ */
-    .features{
-      padding:0 40px 60px;
-      margin-top:-20px;
-      display:flex;
-      gap:20px;
-      justify-content:center;
-      position:relative;
-      z-index:10;
-      flex-wrap:wrap;
-    }
-    .feature-card{
-      background: rgba(255,255,255,0.04);
-      backdrop-filter:blur(12px);
-      padding:35px 28px;
-      border-radius:16px;
-      width:260px;
-      text-align:center;
-      border:1px solid rgba(212,160,23,0.15);
-      transition:all 0.3s;
-      position:relative;
-      overflow:hidden;
-    }
-    .feature-card::after {
-      content:'';
-      position:absolute;
-      top:0; left:0; right:0;
-      height:3px;
-      background: linear-gradient(to right, var(--rojo), var(--dorado));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .feature-card:hover::after { transform: scaleX(1); }
-    .feature-card:hover{
-      transform:translateY(-8px);
-      border-color: rgba(212,160,23,0.4);
-      background: rgba(192,57,43,0.1);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    .feature-icon { font-size:2.5em; margin-bottom:15px; }
-    .feature-card h3{
-      font-family:'Playfair Display', serif;
-      font-size:1.2em;
-      color: var(--dorado);
-      margin-bottom:10px;
-    }
-    .feature-card p { color:var(--gris); font-size:0.92em; line-height:1.6; }
-
-    /* ══════════ STATS STRIP ══════════ */
-    .stats-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      padding: 40px 60px;
-      background: linear-gradient(135deg, rgba(192,57,43,0.08), rgba(212,160,23,0.05));
-      border-top: 1px solid rgba(212,160,23,0.1);
-      border-bottom: 1px solid rgba(212,160,23,0.1);
-      flex-wrap: wrap;
-    }
-    .stat-item {
-      text-align: center;
-      padding: 16px 48px;
-      flex-shrink: 0;
-    }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8em;
-      font-weight: 900;
-      color: var(--dorado);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-num span {
-      font-size: 0.6em;
-      color: var(--rojo);
-    }
-    .stat-label {
-      font-size: 0.8em;
-      color: var(--gris);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .stat-divider {
-      width: 1px;
-      height: 50px;
-      background: rgba(212,160,23,0.2);
-      flex-shrink: 0;
-    }
-
-    /* ══════════ SECCIONES ══════════ */
-    .section { padding:80px 60px; }
-    .section-header {
-      text-align:center;
-      margin-bottom:55px;
-    }
-    .section-tag {
-      display:inline-block;
-      color: var(--dorado);
-      font-size:0.8em;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      margin-bottom:12px;
-    }
-    .section-header h2 {
-      font-family:'Playfair Display', serif;
-      font-size:2.8em;
-      font-weight:900;
-      margin-bottom:15px;
-    }
-    .section-header p { color:var(--gris); font-size:1.05em; max-width:650px; margin:0 auto; line-height:1.7; }
-    .section-header .section-p2 { margin-top:14px; color: rgba(212,160,23,0.85); font-style:italic; }
-    .section-header .section-p2 strong { color: var(--dorado); font-style:normal; }
-    .divider {
-      width:60px; height:3px;
-      background: var(--dorado);
-      margin:15px auto;
-      border-radius:2px;
-    }
-
-    /* ══════════ NOSOTROS ══════════ */
-    #nosotros {
-      background: linear-gradient(180deg, transparent, rgba(192,57,43,0.04) 50%, transparent);
-      padding:80px 60px;
-    }
-    .rellena-info-block {
-      max-width: 950px;
-      margin: 0 auto 55px;
-      padding: 0 10px;
-    }
-    .rellena-info-inner {
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
-      background: linear-gradient(135deg, rgba(192,57,43,0.10), rgba(212,160,23,0.06));
-      border: 1px solid rgba(212,160,23,0.22);
-      border-left: 4px solid var(--dorado);
-      border-radius: 18px;
-      padding: 36px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .rellena-info-inner::before {
-      content: '❝';
-      position: absolute;
-      top: -10px; right: 24px;
-      font-size: 7em;
-      color: rgba(212,160,23,0.06);
-      font-family: 'Playfair Display', serif;
-      line-height: 1;
-      pointer-events: none;
-    }
-    .rellena-info-icon {
-      font-size: 3.2em;
-      flex-shrink: 0;
-      background: rgba(212,160,23,0.12);
-      border: 1px solid rgba(212,160,23,0.25);
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 4px;
-    }
-    .rellena-info-text { flex: 1; }
-    .rellena-quote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.05em;
-      color: var(--texto);
-      line-height: 1.8;
-      margin-bottom: 16px;
-      border: none;
-    }
-    .rellena-desc {
-      color: var(--gris);
-      font-size: 0.96em;
-      line-height: 1.75;
-    }
-    .rellena-desc strong { color: var(--dorado); }
-
-    /* Nosotros features grid */
-    .nosotros-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 950px;
-      margin: 0 auto;
-    }
-    .nosotros-feature-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(212,160,23,0.15);
-      border-radius: 14px;
-      padding: 24px 20px;
-      text-align: center;
-      transition: all 0.3s;
-    }
-    .nosotros-feature-card:hover {
-      background: rgba(192,57,43,0.1);
-      border-color: rgba(212,160,23,0.4);
-      transform: translateY(-4px);
-    }
-    .nosotros-feature-card .nf-icon { font-size: 2em; margin-bottom: 12px; }
-    .nosotros-feature-card h4 {
-      font-family: 'Playfair Display', serif;
-      color: var(--dorado);
-      font-size: 1em;
-      margin-bottom: 8px;
-    }
-    .nosotros-feature-card p { color: var(--gris); font-size: 0.85em; line-height: 1.6; }
-
-    /* ══════════ PRODUCTOS ══════════ */
-    #productos { background: linear-gradient(180deg, transparent, rgba(192,57,43,0.04) 50%, transparent); }
-    .productos-grid {
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:28px;
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .producto-card {
-      background: rgba(255,255,255,0.03);
-      border:1px solid rgba(212,160,23,0.12);
-      border-radius:22px;
-      overflow:hidden;
-      transition:all 0.35s;
-      display:flex;
-      flex-direction:column;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    }
-    .producto-card:hover {
-      transform:translateY(-8px);
-      border-color:rgba(212,160,23,0.4);
-      box-shadow:0 30px 60px rgba(0,0,0,0.55);
-    }
-    .producto-img-wrap {
-      width:100%;
-      aspect-ratio: 4/3;
-      overflow:hidden;
-      position:relative;
-    }
-    .producto-img-wrap img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition: transform 0.6s ease;
-    }
-    .producto-card:hover .producto-img-wrap img { transform:scale(1.07); }
-    .producto-img-wrap::after {
-      content:'';
-      position:absolute;
-      inset:0;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
-      opacity:0;
-      transition: opacity 0.4s;
-      pointer-events:none;
-    }
-    .producto-card:hover .producto-img-wrap::after { opacity:1; }
-    .producto-img-overlay {
-      position:absolute;
-      inset:0;
-      background: linear-gradient(
-        to bottom,
-        transparent 30%,
-        rgba(26,5,0,0.55) 60%,
-        rgba(26,5,0,0.92) 100%
-      );
-      pointer-events:none;
-    }
-    .producto-img-titulo {
-      position:absolute;
-      bottom:0; left:0; right:0;
-      padding:18px 22px 16px;
-      z-index:2;
-    }
-    .producto-tipo {
-      display:inline-block;
-      background: rgba(212,160,23,0.22);
-      border:1px solid rgba(212,160,23,0.5);
-      color: var(--dorado-claro);
-      padding:4px 14px;
-      border-radius:20px;
-      font-size:0.72em;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:8px;
-      font-weight:600;
-    }
-    .producto-img-titulo h3 {
-      font-family:'Playfair Display', serif;
-      font-size:1.45em;
-      font-weight:900;
-      color:white;
-      line-height:1.2;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    }
-    .producto-info {
-      padding:22px 24px 24px;
-      flex:1;
-      display:flex;
-      flex-direction:column;
-    }
-    .producto-caracteristicas {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:18px;
-    }
-    .caract-chip {
-      display:inline-flex;
-      align-items:center;
-      gap:5px;
-      background: rgba(212,160,23,0.08);
-      border:1px solid rgba(212,160,23,0.2);
-      color: var(--texto);
-      padding:5px 12px;
-      border-radius:20px;
-      font-size:0.8em;
-      line-height:1.3;
-      transition: all 0.25s;
-    }
-    .caract-chip:hover {
-      background: rgba(212,160,23,0.18);
-      border-color: rgba(212,160,23,0.45);
       transform: translateY(-2px);
     }
-    .caract-chip .chip-icon { font-size:1em; flex-shrink:0; }
-    .producto-desc {
-      color:var(--gris);
-      font-size:0.9em;
-      line-height:1.65;
-      margin-bottom:20px;
-      flex:1;
+
+    .section { padding: 80px 30px; }
+    .section-header { text-align: center; margin-bottom: 42px; }
+    .section-tag {
+      color: var(--dorado);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.83rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 10px;
+    }
+    .divider {
+      width: 70px;
+      height: 3px;
+      background: var(--dorado);
+      margin: 0 auto 16px;
+      border-radius: 999px;
+    }
+    .section-header p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--gris);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    #nosotros {
+      background: linear-gradient(180deg, transparent, rgba(192,57,43,0.05), transparent);
+      padding-bottom: 56px;
+    }
+    .nosotros-box {
+      max-width: 980px;
+      margin: 0 auto;
+      border-left: 4px solid var(--dorado);
+      border: 1px solid rgba(212, 160, 23, 0.22);
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(192, 57, 43, 0.11), rgba(212, 160, 23, 0.06));
+      padding: 30px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .nosotros-icon {
+      font-size: 3rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .nosotros-texto {
+      color: #ead8c1;
+      line-height: 1.78;
+      font-size: 1.03rem;
+    }
+    .nosotros-texto .cita {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #fff5e7;
+      font-size: 1.08rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .nosotros-texto strong { color: var(--dorado); }
+
+    .stats-section {
+      padding-top: 10px;
+      padding-bottom: 24px;
+    }
+    .stats-strip {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(212, 160, 23, 0.18);
+      border-bottom: 1px solid rgba(212, 160, 23, 0.18);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(192, 57, 43, 0.07), rgba(212, 160, 23, 0.05));
+      gap: 12px;
+    }
+    .stat-item { text-align: center; padding: 30px 10px; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      color: var(--dorado);
+      font-size: 3.1rem;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .stat-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gris);
+      font-size: 0.82rem;
+    }
+
+    .stat-logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 0;
+    }
+    .stat-logo-circle {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 2px solid rgba(212, 160, 23, 0.4);
+      background: rgba(212, 160, 23, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 8px rgba(212, 160, 23, 0.06);
+    }
+    .stat-logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    .stat-logo-fallback {
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--dorado);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .cards-section {
+      padding-top: 10px;
+      padding-bottom: 60px;
+    }
+    .cards-row {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid rgba(212, 160, 23, 0.2);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 15px;
+      padding: 24px 18px;
+      text-align: center;
+    }
+    .card .icon { font-size: 1.9rem; margin-bottom: 10px; }
+    .card h3 {
+      color: var(--dorado);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .card p { color: var(--gris); line-height: 1.6; font-size: 0.93rem; }
+
+    #productos { background: linear-gradient(180deg, transparent, rgba(192,57,43,0.05), transparent); }
+
+    .productos-top {
+      max-width: 1180px;
+      margin: -10px auto 14px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      color: var(--dorado-claro);
+      font-size: 0.83rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .productos-arrow {
+      font-size: 1.9rem;
+      line-height: 1;
+      animation: arrowPulse 1.3s ease-in-out infinite;
+    }
+    @keyframes arrowPulse {
+      0%, 100% { transform: translateX(0); opacity: 0.7; }
+      50% { transform: translateX(8px); opacity: 1; }
+    }
+
+    .productos-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--dorado) rgba(255,255,255,0.05);
+      -ms-overflow-style: auto;
+      padding-bottom: 14px;
+      cursor: grab;
+      user-select: none;
+    }
+    .productos-grid:active {
+      cursor: grabbing;
+    }
+    .productos-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+    .productos-grid::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+    }
+    .productos-grid::-webkit-scrollbar-thumb {
+      background: var(--dorado);
+      border-radius: 999px;
+    }
+
+    .producto-card {
+      min-width: min(360px, 85vw);
+      max-width: 360px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      border: 1px solid rgba(212, 160, 23, 0.16);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      flex-direction: column;
+      pointer-events: auto;
+    }
+    .producto-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+    }
+    .producto-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      draggable: false;
+      -webkit-user-drag: none;
+    }
+    .producto-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 35%, rgba(26, 5, 0, 0.9) 100%);
+    }
+    .producto-img-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 12px 14px 14px;
+      z-index: 2;
+    }
+    .producto-chip {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 160, 23, 0.5);
+      background: rgba(212, 160, 23, 0.2);
+      color: var(--dorado-claro);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.68rem;
+      margin-bottom: 8px;
+    }
+    .producto-img-title h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .producto-info {
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .producto-info p {
+      color: var(--gris);
+      line-height: 1.6;
+      font-size: 0.92rem;
+      flex: 1;
     }
     .btn-consultar {
       background: var(--dorado);
       color: var(--oscuro);
-      border:none;
-      padding:13px 24px;
-      border-radius:10px;
-      font-size:0.85em;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-      transition:all 0.3s;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      width:100%;
-      text-align:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
+      border: 0;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      transition: 0.3s;
+      cursor: pointer;
     }
-    .btn-consultar:hover {
-      background: #b8860b;
-      transform:scale(1.02);
-      box-shadow: 0 6px 20px rgba(212,160,23,0.35);
+    .btn-consultar:hover { background: #b8860b; }
+
+    .domicilios {
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .btn-consultar svg { width:18px;height:18px;fill:var(--oscuro);flex-shrink:0; }
-    .star-badge {
-      position:absolute;
-      top:14px; right:14px;
+
+    .domicilios-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+    .domicilios-box {
+      border: 1px solid rgba(212, 160, 23, 0.2);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 24px;
+    }
+    .domicilios-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dorado);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .domicilios-box p { color: var(--gris); line-height: 1.7; margin-bottom: 12px; }
+
+    .mapa-box {
+      border: 1px solid rgba(212, 160, 23, 0.2);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .mapa-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dorado);
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+    .mapa-box p {
+      color: var(--gris);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+    .mapa-input-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .mapa-input-row input {
+      flex: 1;
+      min-width: 180px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      padding: 11px 14px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.93rem;
+      outline: none;
+    }
+    .mapa-input-row input::placeholder { color: rgba(255,255,255,0.35); }
+    .mapa-input-row input:focus { border-color: rgba(212,160,23,0.5); }
+    .btn-verificar {
       background: var(--dorado);
       color: var(--oscuro);
-      font-size:0.72em;
-      font-weight:700;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      padding:5px 12px;
-      border-radius:20px;
-      z-index:3;
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.3s;
     }
-    .producto-card.card-presentacion .producto-img-titulo h3 { font-size:1.3em; }
-
-    /* ══════════ DOMICILIOS ══════════ */
-    .domicilios {
-      background: rgba(255,255,255,0.02);
-      border-top:1px solid rgba(255,255,255,0.05);
-      border-bottom:1px solid rgba(255,255,255,0.05);
+    .btn-verificar:hover { background: #b8860b; }
+    .mapa-estado {
+      display: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      align-items: center;
+      gap: 8px;
     }
-    .domicilios-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-      max-width:1000px;
-      margin:0 auto;
+    .mapa-estado.disponible {
+      display: flex;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      color: #25d366;
     }
-    .domicilios-info h3 {
-      font-family:'Playfair Display', serif;
-      font-size:1.9em;
-      margin-bottom:20px;
-      color:white;
+    .mapa-estado.no-disponible {
+      display: flex;
+      background: rgba(192, 57, 43, 0.12);
+      border: 1px solid rgba(192, 57, 43, 0.35);
+      color: #e74c3c;
     }
-    .domicilios-info p { color:var(--gris); line-height:1.8; margin-bottom:25px; }
+    .mapa-frame-wrap {
+      width: 100%;
+      height: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(212,160,23,0.15);
+      background: rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .mapa-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .mapa-zonas-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
     .zona-chip {
-      display:inline-block;
-      background: rgba(212,160,23,0.12);
-      border:1px solid rgba(212,160,23,0.3);
-      color: var(--dorado);
-      padding:8px 18px;
-      border-radius:25px;
-      margin:5px;
-      font-size:0.88em;
-      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(212, 160, 23, 0.12);
+      border: 1px solid rgba(212,160,23,0.3);
+      color: var(--dorado-claro);
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
     }
-    .zona-chip:hover {
-      background: rgba(212,160,23,0.22);
-      transform: translateY(-2px);
-    }
-    .pago-card {
-      background: rgba(192,57,43,0.1);
-      border:1px solid rgba(192,57,43,0.2);
-      border-radius:16px;
-      padding:30px;
-      text-align:center;
-      transition: all 0.35s;
-    }
-    .pago-card:hover {
-      box-shadow: 0 0 30px rgba(192,57,43,0.18);
-      transform: translateY(-4px);
-    }
-    .pago-icon { font-size:3em; margin-bottom:15px; }
-    .pago-card h4 {
-      font-family:'Playfair Display', serif;
-      font-size:1.3em;
-      color:var(--dorado);
-      margin-bottom:12px;
-    }
-    .pago-card p { color:var(--gris); line-height:1.7; font-size:0.93em; }
-    .pago-steps { margin-top:20px; text-align:left; }
+
     .pago-step {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:12px;
-      color:var(--texto);
-      font-size:0.9em;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      color: var(--texto);
+      line-height: 1.5;
+      font-size: 0.95rem;
     }
     .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
       background: var(--rojo);
-      color:white;
-      width:26px; height:26px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:0.8em;
-      flex-shrink:0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
-    @keyframes stepPop {
-      0%   { transform: scale(0); }
-      60%  { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-    .pago-step:nth-child(1) .step-num { animation: stepPop 0.5s 0.3s both; }
-    .pago-step:nth-child(2) .step-num { animation: stepPop 0.5s 0.5s both; }
-    .pago-step:nth-child(3) .step-num { animation: stepPop 0.5s 0.7s both; }
-    .pago-step:nth-child(4) .step-num { animation: stepPop 0.5s 0.9s both; }
 
-    /* ══════════ CONTACTO ══════════ */
     .contacto-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      max-width:950px;
-      margin:0 auto;
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
     }
-    .form-group { margin-bottom:20px; }
+    .contacto-card {
+      border: 1px solid rgba(212, 160, 23, 0.18);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 24px;
+    }
+    .contacto-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dorado);
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+    .form-group { margin-bottom: 14px; }
     .form-group label {
-      display:block;
-      color:var(--gris);
-      font-size:0.85em;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      margin-bottom:8px;
+      display: block;
+      color: var(--gris);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
     }
     .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width:100%;
-      background: rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:10px;
-      padding:13px 16px;
-      color:white;
-      font-family:'Lato', sans-serif;
-      font-size:0.95em;
-      transition:border-color 0.3s;
-      outline:none;
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      padding: 11px 12px;
+      outline: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.93rem;
     }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--dorado);
-      background: rgba(212,160,23,0.05);
-    }
-    .form-group select option { background:#1a0a00; }
-    .form-group textarea { resize:vertical; min-height:120px; }
-    .form-success {
-      display:none;
-      background: rgba(37,211,102,0.1);
-      border:1px solid rgba(37,211,102,0.3);
-      border-radius:12px;
-      padding:25px;
-      text-align:center;
-      animation: fadeUp 0.5s ease;
-    }
-    .form-success.show { display:block; }
-    .form-success h4 { color: var(--verde-wa); font-family:'Playfair Display', serif; font-size:1.3em; margin-bottom:10px; }
-    .form-success p { color:var(--gris); font-size:0.95em; }
-    .contacto-info h3 {
-      font-family:'Playfair Display', serif;
-      font-size:1.8em;
-      margin-bottom:25px;
-    }
-    .contacto-dato {
-      display:flex;
-      align-items:center;
-      gap:15px;
-      margin-bottom:20px;
-      padding:18px;
-      background: rgba(255,255,255,0.03);
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.06);
-      transition:all 0.3s;
-    }
-    .contacto-dato:hover {
-      border-color: rgba(212,160,23,0.2);
-      background: rgba(255,255,255,0.05);
-    }
-    .dato-icon { font-size:1.5em; transition: transform 0.3s; }
-    .contacto-dato:hover .dato-icon { transform: scale(1.25) rotate(-5deg); }
-    .dato-text strong { display:block; color:white; margin-bottom:3px; }
-    .dato-text span { color:var(--gris); font-size:0.9em; }
-    .wa-cta-box {
-      background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(37,211,102,0.05));
-      border:2px solid rgba(37,211,102,0.25);
-      border-radius:16px;
-      padding:30px;
-      text-align:center;
-      margin-top:25px;
-      transition:all 0.3s;
-      animation: borderPulse 3s ease infinite;
-    }
-    .wa-cta-box:hover {
-      border-color: rgba(37,211,102,0.5);
-      background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(37,211,102,0.08));
-      transform:translateY(-2px);
-    }
-    .wa-cta-box h4 { font-family:'Playfair Display', serif; color: var(--verde-wa); font-size:1.2em; margin-bottom:8px; }
-    .wa-cta-box p { color:var(--gris); font-size:0.88em; margin-bottom:18px; line-height:1.6; }
-    .wa-cta-btn {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background: var(--verde-wa);
-      color:white;
-      padding:14px 32px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:0.95em;
-      letter-spacing:0.5px;
-      transition:all 0.3s;
-      box-shadow: 0 4px 15px rgba(37,211,102,0.3);
-    }
-    .wa-cta-btn:hover { background: #1da851; transform:translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.5); }
-    .wa-cta-btn svg { width:22px;height:22px;fill:white; }
-    .tel-input-wrap { position:relative; }
-    .tel-input-wrap input { padding-left: 44px; }
-    .tel-input-icon {
-      position:absolute;
-      left:14px; top:50%;
-      transform:translateY(-50%);
-      font-size:1.1em;
-      pointer-events:none;
-      opacity:0.6;
-    }
-    .btn-submit-pro {
-      width:100%;
-      border:none;
-      padding:16px 24px;
-      border-radius:12px;
-      font-size:0.95em;
-      font-weight:700;
-      cursor:pointer;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      transition: all 0.3s;
+    .form-group textarea { min-height: 110px; resize: vertical; }
+    .btn-submit {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
       background: linear-gradient(135deg, var(--rojo), #e74c3c);
-      color:white;
-      box-shadow: 0 6px 20px rgba(192,57,43,0.35);
-      position:relative;
-      overflow:hidden;
+      cursor: pointer;
     }
-    .btn-submit-pro::before {
-      content:'';
-      position:absolute;
-      inset:0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
-      opacity:0;
-      transition: opacity 0.3s;
+    .dato {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.03);
     }
-    .btn-submit-pro:hover { transform:translateY(-2px); box-shadow: 0 10px 30px rgba(192,57,43,0.5); }
-    .btn-submit-pro:hover::before { opacity:1; }
-    .contacto-side-title {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:28px;
+    .dato strong { display: block; color: #fff; }
+    .dato span { color: var(--gris); font-size: 0.92rem; }
+    .wa-cta {
+      margin-top: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      background: rgba(37, 211, 102, 0.09);
+      padding: 16px;
+      text-align: center;
     }
-    .contacto-side-title h3 { margin:0; }
-    .contacto-side-line {
-      flex:1;
-      height:2px;
-      background: linear-gradient(to right, rgba(212,160,23,0.5), transparent);
+    .wa-cta h4 { color: var(--verde-wa); margin-bottom: 6px; }
+    .wa-cta p { color: var(--gris); margin-bottom: 10px; font-size: 0.93rem; }
+    .wa-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background: var(--verde-wa);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-weight: 700;
     }
 
-    /* ══════════ FOOTER ══════════ */
     footer {
-      padding:40px 60px;
-      border-top:1px solid rgba(255,255,255,0.06);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:20px;
-      background: rgba(0,0,0,0.25);
+      margin-top: 30px;
+      border-top: 1px solid rgba(212, 160, 23, 0.16);
+      background: rgba(0, 0, 0, 0.25);
+      padding: 28px 30px;
     }
-    .footer-divider {
-      border:none;
-      border-top: 1px solid rgba(212,160,23,0.12);
-      margin:0;
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(212, 160, 23, 0.12);
     }
-    .footer-logo { font-family:'Playfair Display', serif; font-size:1.2em; color: var(--dorado); }
-    .footer-copy { color:var(--gris); font-size:0.85em; }
-    .footer-links a { color:var(--gris); text-decoration:none; margin-left:20px; font-size:0.85em; transition:color 0.3s; }
-    .footer-links a:hover { color: var(--dorado); }
-    .footer-dev {
-      width:100%;
-      text-align:center;
-      margin-top:20px;
-      padding-top:20px;
-      border-top:1px solid rgba(212,160,23,0.1);
+    .footer-logo {
+      color: var(--dorado);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+    .footer-copy { color: var(--gris); font-size: 0.95rem; }
+    .footer-links a {
+      color: var(--gris);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 16px auto 0;
+      text-align: center;
     }
     .footer-dev-text {
-      color:var(--gris);
-      font-size:0.78em;
-      margin-bottom:12px;
+      color: var(--gris);
+      font-size: 0.8rem;
+      margin-bottom: 10px;
     }
-    .footer-dev-text strong { color:var(--dorado-claro); }
+    .footer-dev-text strong { color: var(--dorado-claro); }
+
     .footer-dev-contacts {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:25px;
-      flex-wrap:wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
     }
     .footer-dev-contact {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:var(--gris);
-      font-size:0.78em;
-      transition:all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gris);
+      font-size: 0.81rem;
     }
-    .footer-dev-contact:hover { color:var(--dorado); }
     .footer-dev-contact a {
-      color:var(--gris);
-      text-decoration:none;
-      transition:color 0.3s;
+      color: var(--gris);
+      text-decoration: none;
     }
-    .footer-dev-contact a:hover { color:var(--dorado); }
-    .footer-dev-contact svg { width:16px; height:16px; flex-shrink:0; }
+    .footer-dev-contact svg { width: 15px; height: 15px; }
     .footer-instagram {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      color:white;
-      text-decoration:none;
-      padding:8px 20px;
-      border-radius:25px;
-      font-size:0.8em;
-      font-weight:600;
-      transition:all 0.3s;
-      box-shadow: 0 4px 15px rgba(220,39,67,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 0.86rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 24%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      box-shadow: 0 6px 16px rgba(220, 39, 67, 0.35);
     }
-    .footer-instagram:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(220,39,67,0.5);
-    }
-    .footer-instagram svg { width:18px; height:18px; fill:white; }
+    .footer-instagram svg { width: 16px; height: 16px; fill: #fff; }
 
-    /* ══════════ WA FLOAT ══════════ */
     .whatsapp-float {
-      position:fixed;
-      bottom:28px; right:28px;
-      width:62px; height:62px;
-      border-radius:50%;
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:999;
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
       background: var(--verde-wa);
-      box-shadow: 0 4px 15px rgba(37,211,102,0.4);
-      animation: float-pulse 2.5s infinite;
-      transition:transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+      animation: waPulse 2.3s infinite;
     }
-    .whatsapp-float:hover { transform:scale(1.12); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
-    .whatsapp-float svg { width:34px;height:34px;fill:white; }
+    .whatsapp-float svg {
+      width: 33px;
+      height: 33px;
+      fill: #fff;
+    }
     .wa-float-tip {
-      position:absolute;
-      right:72px; top:50%;
-      transform:translateY(-50%);
-      background:white; color:#333;
-      font-size:0.82em; font-weight:600;
-      padding:8px 14px; border-radius:8px;
-      white-space:nowrap;
-      box-shadow:0 4px 15px rgba(0,0,0,0.2);
-      opacity:0; visibility:hidden;
-      transition:all 0.3s;
-      pointer-events:none;
+      position: absolute;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      background: #fff;
+      color: #333;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .wa-float-tip::after {
-      content:''; position:absolute; right:-6px; top:50%; transform:translateY(-50%);
-      border:6px solid transparent; border-left-color:white;
+      content: "";
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: #fff;
     }
-    .whatsapp-float:hover .wa-float-tip { opacity:1; visibility:visible; }
+    .whatsapp-float:hover .wa-float-tip {
+      opacity: 1;
+      visibility: visible;
+    }
+    @keyframes waPulse {
+      0% { box-shadow: 0 4px 16px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.45); }
+      70% { box-shadow: 0 4px 16px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0); }
+      100% { box-shadow: 0 4px 16px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); }
+    }
 
-    /* ══════════ MODAL DE PEDIDO ══════════ */
     .modal-overlay {
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.85);
-      z-index:1000;
-      backdrop-filter:blur(8px);
-      animation: fadeIn 0.3s ease;
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.83);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
-    .modal-overlay.open { display:flex; align-items:center; justify-content:center; }
+    .modal-overlay.open { display: flex; }
     .modal-content {
+      width: 100%;
+      max-width: 520px;
       background: linear-gradient(135deg, #2a1000, #1a0a00);
-      border:2px solid rgba(212,160,23,0.4);
-      border-radius:20px;
-      padding:40px;
-      width:90%;
-      max-width:500px;
-      position:relative;
-      animation: modalSlideIn 0.4s ease;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+      border: 2px solid rgba(212, 160, 23, 0.4);
+      border-radius: 18px;
+      padding: 26px;
+      position: relative;
     }
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes modalSlideIn { from{opacity:0;transform:translateY(30px) scale(0.95);} to{opacity:1;transform:translateY(0) scale(1);} }
     .modal-close {
-      position:absolute;
-      top:16px; right:16px;
-      background:rgba(255,255,255,0.1);
-      border:none;
-      width:36px; height:36px;
-      border-radius:50%;
-      color:white;
-      font-size:1.3em;
-      cursor:pointer;
-      transition:all 0.3s;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      border: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.1rem;
     }
-    .modal-close:hover { background:var(--rojo); }
-    .modal-header { text-align:center; margin-bottom:30px; }
-    .modal-header h3 { font-family:'Playfair Display', serif; font-size:1.7em; color:var(--dorado); margin-bottom:8px; }
-    .modal-header p { color:var(--gris); font-size:0.9em; }
-    .modal-product {
-      background:rgba(212,160,23,0.1);
-      border:1px solid rgba(212,160,23,0.25);
-      border-radius:12px;
-      padding:16px 20px;
-      margin-bottom:24px;
-      display:flex;
-      align-items:center;
-      gap:14px;
+    .modal-content h3 {
+      color: var(--dorado);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      margin-bottom: 8px;
+      text-align: center;
     }
-    .modal-product-emoji { font-size:2.5em; }
-    .modal-product-info h4 { color:white; font-size:1.1em; margin-bottom:4px; }
-    .modal-product-info p { color:var(--gris); font-size:0.85em; }
-    .modal-input-group { margin-bottom:18px; }
-    .modal-input-group label {
-      display:block;
-      color:var(--texto);
-      font-size:0.85em;
-      margin-bottom:8px;
-      font-weight:600;
+    .modal-content p {
+      text-align: center;
+      color: var(--gris);
+      margin-bottom: 14px;
     }
-    .modal-input-group input,
-    .modal-input-group textarea {
-      width:100%;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.15);
-      border-radius:10px;
-      padding:14px 16px;
-      color:white;
-      font-size:0.95em;
-      transition:all 0.3s;
-      font-family:'Lato',sans-serif;
+    .modal-input { margin-bottom: 12px; }
+    .modal-input label {
+      color: var(--texto);
+      font-size: 0.83rem;
+      margin-bottom: 5px;
+      display: block;
+      letter-spacing: 0.5px;
     }
-    .modal-input-group input:focus,
-    .modal-input-group textarea:focus {
-      border-color:var(--dorado);
-      background:rgba(212,160,23,0.08);
-      outline:none;
+    .modal-input input,
+    .modal-input textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      padding: 11px;
+      outline: none;
     }
-    .modal-input-group textarea { resize:vertical; min-height:80px; }
+    .modal-input textarea { min-height: 90px; resize: vertical; }
+
     .modal-btn {
-      width:100%;
-      padding:16px 24px;
-      border-radius:12px;
-      font-size:1em;
-      font-weight:700;
-      cursor:pointer;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      transition:all 0.3s;
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
       background: linear-gradient(135deg, var(--verde-wa), #1da851);
-      color:white;
-      border:none;
-      box-shadow:0 6px 20px rgba(37,211,102,0.35);
-      margin-top:10px;
-    }
-    .modal-btn svg { width:22px;height:22px;fill:white; }
-    .modal-btn:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(37,211,102,0.5); }
-    .modal-note {
-      font-size:0.8em;
-      color:var(--gris);
-      text-align:center;
-      margin-top:16px;
-      font-style:italic;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 4px;
     }
 
-    /* ══════════ ANIMACIONES ══════════ */
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(30px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    @keyframes float-pulse{
-      0%  { box-shadow:0 4px 15px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.4); }
-      70% { box-shadow:0 4px 15px rgba(37,211,102,0.4), 0 0 0 15px rgba(37,211,102,0); }
-      100%{ box-shadow:0 4px 15px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0); }
-    }
-    @keyframes shimmer {
-      0%   { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    @keyframes badgePulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(212,160,23,0.4); }
-      50%       { box-shadow: 0 0 0 8px rgba(212,160,23,0); }
-    }
-    @keyframes borderPulse {
-      0%, 100% { border-color: rgba(37,211,102,0.25); }
-      50%       { border-color: rgba(37,211,102,0.6); }
-    }
-    .reveal { opacity:0; transform:translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-
-    /* Separador */
-    .section-sep {
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:16px;
-      padding:10px 0 0;
-      color: rgba(212,160,23,0.35);
-      font-size:1.1em;
-      letter-spacing:6px;
-    }
-    .section-sep::before, .section-sep::after {
-      content:'';
-      flex:1;
-      max-width:120px;
-      height:1px;
-      background: linear-gradient(to right, transparent, rgba(212,160,23,0.3));
-    }
-    .section-sep::after { background: linear-gradient(to left, transparent, rgba(212,160,23,0.3)); }
-    .hero-line {
-      width:80px; height:3px;
-      background: linear-gradient(to right, var(--dorado), transparent);
-      margin:18px 0;
-    }
-
-    /* ══════════ RESPONSIVE ══════════ */
-    @media(max-width:1100px){
-      .productos-grid { grid-template-columns: repeat(2, 1fr); }
-      .productos-grid .producto-card:last-child { grid-column: span 2; max-width:500px; margin:0 auto; width:100%; }
-    }
-    @media(max-width:900px){
-      header { padding:18px 25px; }
-      header nav { display:none; }
-      .hamburger { display:flex; }
-      .hero  { padding:100px 25px 60px; }
-      .hero h1 { font-size:2.4em; }
-      .hero-deco {
-        position:relative;
-        right:auto;
-        top:auto;
-        transform:none;
-        margin: 20px auto 0;
-        display:flex;
-        justify-content:center;
+    @media (max-width: 1050px) {
+      .cards-row { grid-template-columns: repeat(2, 1fr); }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .domicilios-grid { grid-template-columns: 1fr; }
+      .footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
-      .hero-deco-circle {
-        width:180px;
-        height:180px;
-      }
-      .hero-deco-emoji { font-size:3em; }
-      .hero-deco-years { font-size:2em; }
-      .hero-deco-label { font-size:0.65em; }
-      .domicilios-grid, .contacto-grid { grid-template-columns:1fr; }
-      .section { padding:60px 25px; }
-      #nosotros { padding:60px 25px; }
-      footer { padding:30px 25px; flex-direction:column; text-align:center; }
-      .footer-links a { margin:0 10px; }
-      .wa-float-tip { display:none; }
-      .nosotros-features { grid-template-columns: repeat(2, 1fr); }
-      .modal-content { padding:30px 24px; }
-      .footer-dev-contacts { flex-direction:column; gap:12px; }
+      .footer-links a { margin: 0 8px; }
     }
-    @media(max-width:700px){
-      .stats-strip { padding: 30px 20px; gap: 10px; }
-      .stat-item { padding: 12px 24px; }
-      .stat-num { font-size: 2em; }
-      .stat-divider { display: none; }
-      .rellena-info-inner { flex-direction: column; padding: 26px 22px; gap: 18px; }
-      .rellena-info-icon { width: 56px; height: 56px; font-size: 2.4em; }
-      .rellena-quote { font-size: 0.97em; }
+
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 104px 18px 62px; }
+      .section { padding: 64px 18px; }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+      .productos-top { justify-content: center; }
+      .wa-float-tip { display: none; }
+      .stats-strip { grid-template-columns: 1fr; gap: 0; }
+      .stat-logo-wrap { padding-top: 0; padding-bottom: 0; }
+      .stat-item { padding: 24px 10px; }
     }
-    @media(max-width:640px){
-      .productos-grid { grid-template-columns:1fr; }
-      .productos-grid .producto-card:last-child { grid-column: span 1; max-width:100%; }
-      .nosotros-features { grid-template-columns: 1fr; }
-    }
-    @media(max-width:500px){
-      header { padding:16px 18px; }
-      .hero { padding:90px 18px 50px; }
-      .hero h1 { font-size:2em; }
-      .hero-badge { font-size:0.7em; padding:5px 14px; }
-      .hero-btns { flex-direction:column; }
-      .hero-btns .btn { text-align:center; justify-content:center; }
-      .features { flex-direction:column; align-items:center; padding:20px 18px 40px; margin-top:20px; }
-      .feature-card { width:100%; max-width:320px; }
-      .section-header h2 { font-size:2em; }
-      .contacto-info h3 { font-size:1.4em; }
-      .modal-content { padding:24px 20px; margin:20px; max-width:calc(100% - 40px); }
-      .footer-dev { padding-top:15px; }
-      .footer-dev-text { font-size:0.72em; }
-      .footer-dev-contact { font-size:0.75em; }
+
+    @media (max-width: 640px) {
+      .cards-row { grid-template-columns: 1fr; }
+      .logo-main { font-size: 1.7rem; }
+      .hero-subtitle { font-size: 1.6rem; }
+      .producto-card { min-width: 84vw; max-width: 84vw; }
+      .producto-img-wrap { height: 200px; }
+      .nosotros-box { flex-direction: column; }
+      .footer-logo { font-size: 1.2rem; }
+      .mapa-input-row { flex-direction: column; }
+      .mapa-frame-wrap { height: 220px; }
     }
   </style>
 </head>
 <body>
-
-<!-- ══ MOBILE MENU ══ -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#inicio"     onclick="closeMobile()">Inicio</a>
-  <a href="#nosotros"   onclick="closeMobile()">Nosotros</a>
-  <a href="#domicilios" onclick="closeMobile()">Domicilios</a>
-  <a href="#contacto"   onclick="closeMobile()">Contacto</a>
-  <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional%20🐷" target="_blank" class="wa-btn-mobile">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Pedir Ahora
-  </a>
-</div>
-
-<!-- ══ HEADER ══ -->
-<header id="site-header">
-  <div class="logo">
-    <span class="logo-main">🐷 La Sabrosita</span>
-    <span class="logo-sub">Rellena Tradicional</span>
-  </div>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#domicilios">Domicilios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  <button class="hamburger" id="hamburger" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<!-- ══ HERO ══ -->
-<section class="hero" id="inicio">
-  <div class="hero-content">
-    <div class="hero-badge">🔥 Tradición desde hace 15 años</div>
-    <h1>La <span>Rellena</span> más<br>Sabrosa de Bogotá</h1>
-    <p class="hero-subtitle">La Inigualable Sabrosita</p>
-    <div class="hero-line"></div>
-    <p>Elaborada artesanalmente con receta propia, higiene rigurosa y el sabor auténtico de la tradición colombiana. Llevamos nuestra rellena directamente a tu puerta en Bogotá, Soacha y alrededores cercanos.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional%20🐷" class="btn btn-whatsapp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Pedir por WhatsApp
-      </a>
-      <a href="#nosotros" class="btn btn-outline">Conoce la Rellena</a>
-    </div>
-  </div>
-  <div class="hero-deco">
-    <div class="hero-deco-circle">
-      <div class="hero-deco-emoji">🐷</div>
-      <div class="hero-deco-years">15</div>
-      <div class="hero-deco-label">años de tradición</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FEATURES ══ -->
-<section class="features">
-  <div class="feature-card">
-    <div class="feature-icon">🌿</div>
-    <h3>100% Artesanal</h3>
-    <p>Receta propia con ingredientes frescos y proceso de limpieza riguroso garantizado.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">🚚</div>
-    <h3>Domicilios</h3>
-    <p>Entregamos en Bogotá, Soacha y alrededores cercanos. Acordamos el horario contigo.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">💳</div>
-    <h3>Pago por Mitades</h3>
-    <p>Paga el 50% al pedir y el resto al recibir tu pedido. Sin complicaciones.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">⭐</div>
-    <h3>Calidad Garantizada</h3>
-    <p>15 años de clientes felices avalan nuestro sabor único e inigualable.</p>
-  </div>
-</section>
-
-<!-- ══ STATS STRIP ══ -->
-<div class="stats-strip">
-  <div class="stat-item reveal">
-    <div class="stat-num">15<span>+</span></div>
-    <div class="stat-label">Años de tradición</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item reveal">
-    <div class="stat-num">100<span>%</span></div>
-    <div class="stat-label">Artesanal</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item reveal">
-    <div class="stat-num">2</div>
-    <div class="stat-label">Presentaciones únicas</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item reveal">
-    <div class="stat-num">🐷</div>
-    <div class="stat-label">Receta exclusiva</div>
-  </div>
-</div>
-
-<div class="section-sep">✦ ✦ ✦</div>
-
-<!-- ══ NOSOTROS ══ -->
-<section id="nosotros">
-  <div class="section-header">
-    <div class="section-tag">🐷 Nuestra historia y tradición</div>
-    <h2>¿Qué es la Rellena?</h2>
-    <div class="divider"></div>
-    <p>Un plato icónico de la gastronomía colombiana, rico en especias y tradición andina.</p>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" onclick="closeMobile()">Inicio</a>
+    <a href="#domicilios" onclick="closeMobile()">Domicilios</a>
+    <a href="#contacto" onclick="closeMobile()">Contacto</a>
+    <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional" target="_blank" class="wa-btn-mobile">
+      Pedir Ahora
+    </a>
   </div>
 
-  <div class="rellena-info-block reveal">
-    <div class="rellena-info-inner">
-      <div class="rellena-info-icon">🐷</div>
-      <div class="rellena-info-text">
-        <p class="rellena-quote">"La rellena es un icónico plato tradicional de la gastronomía colombiana, especialmente popular en la región andina. Se trata de una morcilla elaborada con vísceras de cerdo, arroz, cebolla, hierbabuena y una generosa mezcla de especias que le dan su sabor único e inconfundible."</p>
-        <p class="rellena-desc">En <strong>La Sabrosita</strong>, preparamos nuestra rellena con los mejores ingredientes frescos, respetando la receta tradicional para ofrecerte una experiencia gastronómica auténtica y llena de sabor. Cada unidad es un homenaje a la cocina colombiana de siempre.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="nosotros-features">
-    <div class="nosotros-feature-card reveal">
-      <div class="nf-icon">🌿</div>
-      <h4>Hierbabuena y Especias</h4>
-      <p>Seleccionamos hierbabuena fresca, cilantro, comino y ají para lograr ese sabor inconfundible.</p>
-    </div>
-    <div class="nosotros-feature-card reveal">
-      <div class="nf-icon">🍚</div>
-      <h4>Arroz Tradicional</h4>
-      <p>Arroz cocinado con aliños y caldo para aportar textura y absorber todos los sabores.</p>
-    </div>
-    <div class="nosotros-feature-card reveal">
-      <div class="nf-icon">🐷</div>
-      <h4>Tripa Natural de Cerdo</h4>
-      <p>Usamos tripa natural limpia rigurosamente para mantener el sabor y la textura auténticos.</p>
-    </div>
-    <div class="nosotros-feature-card reveal">
-      <div class="nf-icon">❤️</div>
-      <h4>15 Años de Receta</h4>
-      <p>Nuestra receta ha pasado de generación en generación, con el mismo amor y dedicación de siempre.</p>
-    </div>
-  </div>
-</section>
-
-<div class="section-sep">✦ ✦ ✦</div>
-
-<!-- ══ PRODUCTOS ══ -->
-<section class="section" id="productos">
-  <div class="section-header">
-    <div class="section-tag">🐷 Lo que ofrecemos</div>
-    <h2>Nuestro Inigualable Producto</h2>
-    <div class="divider"></div>
-    <p>La rellena es un icónico plato tradicional de la gastronomía colombiana, especialmente popular en la región andina. Se trata de una morcilla elaborada con vísceras de cerdo, arroz, cebolla, hierbabuena y una generosa mezcla de especias que le dan su sabor único e inconfundible.</p>
-    <p class="section-p2">En <strong>La Sabrosita</strong>, preparamos nuestra rellena con los mejores ingredientes frescos, respetando la receta tradicional para ofrecerte una experiencia gastronómica auténtica y llena de sabor.</p>
-  </div>
-
-  <div class="productos-grid">
-    <!-- Producto 1 -->
-    <div class="producto-card reveal">
-      <div class="producto-img-wrap">
-        <img src="rellena-delgada.png" alt="Morcilla Delgada - Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
-        <div class="producto-img-overlay"></div>
-        <span class="star-badge">⭐ Más vendida</span>
-        <div class="producto-img-titulo">
-          <div class="producto-tipo">Presentación clásica</div>
-          <h3>Morcilla Delgada</h3>
-        </div>
-      </div>
-      <div class="producto-info">
-        <div class="producto-caracteristicas">
-          <span class="caract-chip"><span class="chip-icon">🌀</span> Forma tubular clásica</span>
-          <span class="caract-chip"><span class="chip-icon">🌶️</span> Especias seleccionadas</span>
-          <span class="caract-chip"><span class="chip-icon">🐷</span> Tripa natural de cerdo</span>
-          <span class="caract-chip"><span class="chip-icon">🔥</span> Perfecta a la plancha</span>
-        </div>
-        <p class="producto-desc">La presentación tradicional de nuestra rellena. Tamaño ideal para asar a la plancha o a las brasas. Con textura firme, sabor concentrado y la receta que nos hace únicos desde hace 15 años.</p>
-        <button class="btn-consultar" onclick="openPedidoModal('Morcilla Delgada', 'Presentación clásica')">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.M157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Hacer Pedido
-        </button>
-      </div>
-    </div>
-
-    <!-- Producto 2 -->
-    <div class="producto-card reveal">
-      <div class="producto-img-wrap">
-        <img src="rellena-obispo.png" alt="Morcilla Gruesa El Obispo - Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
-        <div class="producto-img-overlay"></div>
-        <div class="producto-img-titulo">
-          <div class="producto-tipo">Presentación premium</div>
-          <h3>Morcilla Gruesa <em style="font-size:0.85em;font-weight:700;color:var(--dorado-claro)">— El Obispo</em></h3>
-        </div>
-      </div>
-      <div class="producto-info">
-        <div class="producto-caracteristicas">
-          <span class="caract-chip"><span class="chip-icon">👑</span> Tamaño extra generoso</span>
-          <span class="caract-chip"><span class="chip-icon">🌾</span> Relleno abundante</span>
-          <span class="caract-chip"><span class="chip-icon">🐷</span> Tripa natural de cerdo</span>
-          <span class="caract-chip"><span class="chip-icon">🎉</span> Ideal para eventos</span>
-        </div>
-        <p class="producto-desc">Nuestra versión XL, conocida popularmente como <strong style="color:var(--dorado)">El Obispo</strong>. Un formato imponente, relleno generoso y el mismo sabor artesanal que nos distingue. Perfecta para reuniones y asados familiares.</p>
-        <button class="btn-consultar" onclick="openPedidoModal('Morcilla Gruesa — El Obispo', 'Presentación premium')">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Hacer Pedido
-        </button>
-      </div>
-    </div>
-
-    <!-- Producto 3 -->
-    <div class="producto-card card-presentacion reveal">
-      <div class="producto-img-wrap">
-        <img src="la-rellena.png" alt="La Rellena Tradicional" style="width:100%;height:100%;object-fit:cover;"/>
-        <div class="producto-img-overlay"></div>
-        <div class="producto-img-titulo">
-          <div class="producto-tipo">Versatilidad</div>
-          <h3>La Rellena</h3>
-        </div>
-      </div>
-      <div class="producto-info">
-        <div class="producto-caracteristicas">
-          <span class="caract-chip"><span class="chip-icon">🌀</span> En espiral (rueda)</span>
-          <span class="caract-chip"><span class="chip-icon">🍽️</span> En rodajas</span>
-          <span class="caract-chip"><span class="chip-icon">🥩</span> En trozos</span>
-          <span class="caract-chip"><span class="chip-icon">🛵</span> A domicilio lista</span>
-        </div>
-        <p class="producto-desc">Nuestra rellena se adapta a como más la disfrutes: entera en espiral para asar, en rodajas para servir, o en porciones para eventos. Siempre fresca, siempre artesanal, siempre la misma receta de 15 años.</p>
-        <button class="btn-consultar" onclick="openPedidoModal('La Rellena', 'Versatilidad')">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Hacer Pedido
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-sep">✦ ✦ ✦</div>
-
-<!-- ══ DOMICILIOS ══ -->
-<section class="section domicilios" id="domicilios">
-  <div class="section-header">
-    <div class="section-tag">🚚 Llegamos hasta tu puerta</div>
-    <h2>Zonas de Entrega</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="domicilios-grid">
-    <div class="domicilios-info reveal">
-      <h3>Bogotá, Soacha y Alrededores</h3>
-      <p>Llevamos nuestra rellena a domicilio a Bogotá, Soacha y municipios cercanos. Coordinamos el horario de entrega directamente contigo por WhatsApp para tu comodidad.</p>
-      <div>
-        <span class="zona-chip">📍 Bogotá D.C.</span>
-        <span class="zona-chip">📍 Soacha</span>
-        <span class="zona-chip">📍 Alrededores cercanos</span>
-      </div>
-    </div>
-    <div class="pago-card reveal">
-      <div class="pago-icon">💳</div>
-      <h4>Sistema de Pago por Mitades</h4>
-      <p>Para tu tranquilidad y la nuestra, manejamos un sistema de pago dividido:</p>
-      <div class="pago-steps">
-        <div class="pago-step">
-          <div class="step-num">1</div>
-          <span>Haces tu pedido por WhatsApp o formulario</span>
-        </div>
-        <div class="pago-step">
-          <div class="step-num">2</div>
-          <span>Pagas el <strong>50%</strong> para confirmar el pedido</span>
-        </div>
-        <div class="pago-step">
-          <div class="step-num">3</div>
-          <span>Preparamos tu rellena fresca con amor 🐷</span>
-        </div>
-        <div class="pago-step">
-          <div class="step-num">4</div>
-          <span>Al recibir, pagas el <strong>50% restante</strong></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CONTACTO ══ -->
-<section class="section" id="contacto">
-  <div class="section-header">
-    <div class="section-tag">📬 Escríbenos</div>
-    <h2>Contáctanos</h2>
-    <div class="divider"></div>
-    <p>¿Tienes preguntas o quieres hacer un pedido? ¡Estamos listos para atenderte!</p>
-  </div>
-  <div class="contacto-grid">
+  <header id="site-header">
     <div>
-      <form id="contactForm" action="https://formsubmit.co/la.inigualablesabrosita@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="🐷 Nuevo mensaje - La Sabrosita">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="">
-        <input type="text" name="_honey" style="display:none">
-        <div class="form-group">
-          <label for="nombre">Tu nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
+      <div class="logo-main"><span>🐷</span><span>La Sabrosita</span></div>
+      <div class="logo-sub">Rellena Tradicional</div>
+    </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#domicilios">Domicilios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <section class="hero" id="inicio">
+    <img class="hero-bg" src="./Delgada.png" alt="Rellena tradicional" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1900&q=80';" />
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">Tradición desde hace 15 años</div>
+      <h1>La <span>Rellena</span> más<br />Sabrosa de Bogotá</h1>
+      <p class="hero-subtitle">La Inigualable Sabrosita</p>
+      <div class="hero-line"></div>
+      <p>Elaborada artesanalmente con receta propia, higiene rigurosa y el sabor auténtico de la tradición colombiana. Llevamos nuestra rellena directamente a tu puerta en Bogotá, Soacha y alrededores cercanos.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional" target="_blank" class="btn btn-whatsapp">Pedir por WhatsApp</a>
+        <a href="#nosotros" class="btn btn-outline">Conoce la Rellena</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <div class="section-header">
+      <div class="section-tag">🐷 Nuestra historia y tradición</div>
+      <h2>¿Qué es la Rellena?</h2>
+      <div class="divider"></div>
+      <p>Un plato icónico de la gastronomía colombiana, rico en especias y tradición andina.</p>
+    </div>
+
+    <div class="nosotros-box">
+      <div class="nosotros-icon">🐷</div>
+      <div class="nosotros-texto">
+        <span class="cita">"La rellena es un icónico plato tradicional de la gastronomía colombiana, especialmente popular en la región andina. Se trata de una morcilla elaborada con vísceras de cerdo, arroz, cebolla, hierbabuena y una generosa mezcla de especias que le dan su sabor único e inconfundible."</span>
+        En <strong>La Sabrosita</strong>, preparamos nuestra rellena con los mejores ingredientes frescos, respetando la receta tradicional para ofrecerte una experiencia gastronómica auténtica y llena de sabor. Cada unidad es un homenaje a la cocina colombiana de siempre.
+      </div>
+    </div>
+  </section>
+
+  <section class="section stats-section">
+    <div class="stats-strip">
+      <div class="stat-item">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Años de tradición</div>
+      </div>
+
+      <div class="stat-logo-wrap">
+        <div class="stat-logo-circle">
+          <span class="stat-logo-fallback">🐷</span>
+          <img src="./LOgo.png" alt="Logo cerdito" onerror="this.style.display='none';" />
         </div>
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
-        </div>
-        <div class="form-group">
-          <label for="telefono">Número de contacto</label>
-          <div class="tel-input-wrap">
-            <span class="tel-input-icon">📱</span>
-            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 300 123 4567" required>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Artesanal</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cards-section">
+    <div class="cards-row">
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Sabor Auténtico</h3>
+        <p>Receta tradicional con el sabor de siempre, hecha de forma artesanal.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🚚</div>
+        <h3>Domicilios</h3>
+        <p>Entregas en Bogotá, Soacha y alrededores con coordinación por WhatsApp.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🥩</div>
+        <h3>Frescura Diaria</h3>
+        <p>Producción fresca para mantener calidad, textura y sabor en cada pedido.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⭐</div>
+        <h3>15 Años</h3>
+        <p>Experiencia y constancia que respaldan nuestro producto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="productos">
+    <div class="section-header">
+      <div class="section-tag">Lo que ofrecemos</div>
+      <h2>Nuestras Presentaciones</h2>
+      <div class="divider"></div>
+      <p>Desliza a la derecha para ver más fotos de la rellena.</p>
+    </div>
+
+    <div class="productos-top">
+      <span>Desliza para ver más fotos</span>
+      <span class="productos-arrow" id="productosArrow">→</span>
+    </div>
+
+    <div class="productos-grid" id="productosGrid">
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./Delgada.png" alt="Rellena Delgada" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Presentación clásica</span>
+            <h3>Rellena Delgada</h3>
           </div>
         </div>
-        <div class="form-group">
-          <label for="asunto">¿Qué necesitas?</label>
-          <select id="asunto" name="asunto" required>
-            <option value="">Selecciona una opción</option>
-            <option value="Hacer un pedido">Hacer un pedido</option>
-            <option value="Consultar precios">Consultar precios</option>
-            <option value="Consultar zona de domicilio">Consultar zona de domicilio</option>
-            <option value="Pedido para evento">Pedido para evento o reunión</option>
-            <option value="Otro">Otro</option>
-          </select>
+        <div class="producto-info">
+          <p>Ideal para plancha y parrilla, con sabor concentrado y textura firme.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Presentación clásica')">Hacer pedido</a>
         </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas..." required></textarea>
+      </article>
+
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./rellena-obispo.png" alt="Rellena Gruesa" onerror="this.src='https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Presentación premium</span>
+            <h3>Rellena Gruesa</h3>
+          </div>
         </div>
-        <button type="submit" class="btn-submit-pro">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-          Enviar Mensaje
-        </button>
-      </form>
-      <div class="form-success" id="formSuccess">
-        <h4>✅ ¡Mensaje enviado!</h4>
-        <p>Recibimos tu mensaje correctamente. Te responderemos lo más pronto posible. ¡Gracias por preferirnos! 🐷</p>
+        <div class="producto-info">
+          <p>Formato más abundante, recomendado para reuniones y eventos.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Gruesa', 'Presentación premium')">Hacer pedido</a>
+        </div>
+      </article>
+
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./rellenafrita.png" alt="Rellena frita" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Galería</span>
+            <h3>Rellena Frita</h3>
+          </div>
+        </div>
+        <div class="producto-info">
+          <p>Foto adicional para mostrar variedad visual del producto.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Rellena frita')">Hacer pedido</a>
+        </div>
+      </article>
+
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./rellenaprovocativa.png" alt="Rellena provocativa" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Galería</span>
+            <h3>Rellena Provocativa</h3>
+          </div>
+        </div>
+        <div class="producto-info">
+          <p>Imagen adicional para reforzar impacto visual al deslizar.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Rellena provocativa')">Hacer pedido</a>
+        </div>
+      </article>
+
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./morcilladeli.png" alt="Morcilla deli" onerror="this.src='https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Galería</span>
+            <h3>Morcilla Deli</h3>
+          </div>
+        </div>
+        <div class="producto-info">
+          <p>Fotografía adicional para mantener interés del cliente.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Gruesa', 'Morcilla deli')">Hacer pedido</a>
+        </div>
+      </article>
+
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./Morcil.png" alt="Morcil" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Galería</span>
+            <h3>Morcil</h3>
+          </div>
+        </div>
+        <div class="producto-info">
+          <p>Otra foto de apoyo para completar el carrusel de productos.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Gruesa', 'Morcil')">Hacer pedido</a>
+        </div>
+      </article>
+
+      <article class="producto-card">
+        <div class="producto-img-wrap">
+          <img src="./Pedacito.png" alt="Rellena en pedacitos" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <div class="producto-img-overlay"></div>
+          <div class="producto-img-title">
+            <span class="producto-chip">Foto adicional</span>
+            <h3>Rellena en Pedacitos</h3>
+          </div>
+        </div>
+        <div class="producto-info">
+          <p>Foto adicional para mostrar otra presentación visual del producto.</p>
+          <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Foto adicional')">Hacer pedido</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section domicilios" id="domicilios">
+    <div class="section-header">
+      <div class="section-tag">Llegamos hasta tu puerta</div>
+      <h2>Zonas de Entrega</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="domicilios-grid">
+      <!-- Mapa interactivo (columna izquierda) -->
+      <div class="mapa-box">
+        <h3>📍 ¿Llegamos a tu zona?</h3>
+        <p>Ingresa tu dirección para verificar si tenemos cobertura de domicilio en tu sector.</p>
+
+        <div class="mapa-input-row">
+          <input
+            type="text"
+            id="mapaInput"
+            placeholder="Ej: Calle 13 #45-20, Bogotá"
+            onkeydown="if(event.key==='Enter') verificarZona()"
+          />
+          <button class="btn-verificar" onclick="verificarZona()">Verificar</button>
+        </div>
+
+        <div class="mapa-estado" id="mapaEstado"></div>
+
+        <div class="mapa-frame-wrap">
+          <!-- Mapa estático sin API key (no causa error) -->
+          <iframe
+            id="mapaIframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127324.30345688896!2d-74.24735385!3d4.6482837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2sBogot%C3%A1!5e0!3m2!1ses!2sco!4v1710000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de cobertura"
+          ></iframe>
+        </div>
+
+        <div>
+          <p style="font-size:0.8rem; color:var(--gris); margin-bottom:8px;">Zonas con cobertura disponible:</p>
+          <div class="mapa-zonas-chips">
+            <span class="zona-chip">✅ Bogotá</span>
+            <span class="zona-chip">✅ Soacha</span>
+            <span class="zona-chip">✅ Bosa</span>
+            <span class="zona-chip">✅ Kennedy</span>
+            <span class="zona-chip">✅ Fontibón</span>
+            <span class="zona-chip">✅ Engativá</span>
+            <span class="zona-chip">✅ Alrededores</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de condiciones (columna derecha) -->
+      <div class="domicilios-box">
+        <h3>Condiciones de pago y envío</h3>
+        <p>Para confirmar y despachar el pedido:</p>
+        <div class="pago-step"><span class="step-num">1</span><span>Haces tu pedido por WhatsApp o formulario.</span></div>
+        <div class="pago-step"><span class="step-num">2</span><span>Pagas el <strong>50% del valor de la rellena</strong> antes del envío.</span></div>
+        <div class="pago-step"><span class="step-num">3</span><span>Preparamos tu pedido fresco y lo despachamos.</span></div>
+        <div class="pago-step"><span class="step-num">4</span><span>Desde <strong>10 libras</strong>, el valor del envío se puede pagar por mitades (50/50).</span></div>
       </div>
     </div>
-    <div class="contacto-info">
-      <div class="contacto-side-title">
-        <h3>¡Escríbenos directo!</h3>
-        <div class="contacto-side-line"></div>
+  </section>
+
+  <section class="section" id="contacto">
+    <div class="section-header">
+      <div class="section-tag">Escríbenos</div>
+      <h2>Contáctanos</h2>
+      <div class="divider"></div>
+      <p>¿Tienes preguntas o quieres hacer un pedido? Te atendemos rápido.</p>
+    </div>
+
+    <div class="contacto-grid">
+      <div class="contacto-card">
+        <h3>Formulario</h3>
+        <form id="contactForm" action="https://formsubmit.co/la.inigualablesabrosita@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo mensaje - La Sabrosita" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" required />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Enviar mensaje</button>
+        </form>
       </div>
-      <div class="contacto-dato reveal">
-        <div class="dato-icon">📧</div>
-        <div class="dato-text">
-          <strong>Correo Electrónico</strong>
-          <span>la.inigualablesabrosita@gmail.com</span>
+
+      <div class="contacto-card">
+        <h3>Atención directa</h3>
+        <div class="dato"><div>📧</div><div><strong>Correo</strong><span>la.inigualablesabrosita@gmail.com</span></div></div>
+        <div class="dato"><div>📱</div><div><strong>WhatsApp</strong><span>333 249 2934</span></div></div>
+        <div class="dato"><div>📍</div><div><strong>Cobertura</strong><span>Bogotá, Soacha y alrededores</span></div></div>
+        <div class="dato"><div>🕒</div><div><strong>Horario</strong><span>Lunes a Sábado: 7am - 7pm</span></div></div>
+
+        <div class="wa-cta">
+          <h4>¿Prefieres WhatsApp?</h4>
+          <p>Haz tu pedido de forma inmediata.</p>
+          <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional" target="_blank">Chatear por WhatsApp</a>
         </div>
       </div>
-      <div class="contacto-dato reveal">
-        <div class="dato-icon">📱</div>
-        <div class="dato-text">
-          <strong>WhatsApp</strong>
-          <span>333 249 2934</span>
-        </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">🐷 Rellena Tradicional La Inigualable Sabrosita</div>
+      <div class="footer-copy">© 2025 · Bogotá, Colombia · Hecho con mucho sabor</div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#domicilios">Domicilios</a>
+        <a href="#contacto">Contacto</a>
       </div>
-      <div class="contacto-dato reveal">
-        <div class="dato-icon">📍</div>
-        <div class="dato-text">
-          <strong>Cobertura</strong>
-          <span>Bogotá, Soacha y alrededores cercanos</span>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-dev-text">Desarrollado por <strong>Jhonatan Rojas Meneses</strong></div>
+      <div class="footer-dev-contacts">
+        <div class="footer-dev-contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:rojasjhonatan88@gmail.com">rojasjhonatan88@gmail.com</a>
         </div>
-      </div>
-      <div class="contacto-dato reveal">
-        <div class="dato-icon">🕐</div>
-        <div class="dato-text">
-          <strong>Horario de Atención</strong>
-          <span>Lunes a Sábado: 7am – 7pm</span>
+        <div class="footer-dev-contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+573154236827">+57 315 423 6827</a>
         </div>
-      </div>
-      <div class="wa-cta-box reveal">
-        <h4>💬 ¿Prefieres escribirnos directo?</h4>
-        <p>La forma más rápida de hacer tu pedido o resolver tus dudas. ¡Te respondemos al instante!</p>
-        <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional%20🐷" class="wa-cta-btn">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.M157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Chatear por WhatsApp
+        <a href="https://www.instagram.com/lasabrositarellena/" target="_blank" rel="noopener noreferrer" class="footer-instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
         </a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ══ FOOTER ══ -->
-<hr class="footer-divider"/>
-<footer>
-  <div class="footer-logo">🐷 Rellena Tradicional La Inigualable Sabrosita</div>
-  <div class="footer-copy">© 2025 · Bogotá, Colombia · Hecho con ❤️ y mucho sabor</div>
-  <div class="footer-links">
-    <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#domicilios">Domicilios</a>
-    <a href="#contacto">Contacto</a>
-  </div>
-  <div class="footer-dev">
-    <div class="footer-dev-text">💻 Desarrollado por <strong>Jhonatan Rojas Meneses</strong></div>
-    <div class="footer-dev-contacts">
-      <div class="footer-dev-contact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:rojasjhonatan88@gmail.com">rojasjhonatan88@gmail.com</a>
+  <a class="whatsapp-float" href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <span class="wa-float-tip">Haz tu pedido aquí</span>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div class="modal-overlay" id="pedidoModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closePedidoModal()">✕</button>
+      <h3>Hacer tu pedido</h3>
+      <p>Completa la información y te enviamos a WhatsApp.</p>
+
+      <div class="modal-input">
+        <label>Producto</label>
+        <input id="modalProductName" type="text" readonly value="Rellena Delgada" />
       </div>
-      <div class="footer-dev-contact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <a href="tel:+573154236827">+57 315 423 6827</a>
+      <div class="modal-input">
+        <label>Tipo</label>
+        <input id="modalProductType" type="text" readonly value="Presentación clásica" />
       </div>
-      <a href="https://www.instagram.com/lasabrositarellena/" target="_blank" rel="noopener noreferrer" class="footer-instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        Instagram
-      </a>
+      <div class="modal-input">
+        <label>¿Cuántas libras deseas?</label>
+        <input id="pedidoLibras" type="number" min="1" step="0.5" />
+      </div>
+      <div class="modal-input">
+        <label>Dirección de entrega</label>
+        <textarea id="pedidoDireccion"></textarea>
+      </div>
+      <div class="modal-input">
+        <label>Tu nombre</label>
+        <input id="pedidoNombre" type="text" />
+      </div>
+      <button class="modal-btn" onclick="enviarPedido()">Enviar a WhatsApp</button>
     </div>
   </div>
-</footer>
 
-<!-- ══ WA FLOTANTE ══ -->
-<a class="whatsapp-float" href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional%20🐷" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-  <span class="wa-float-tip">¡Haz tu pedido aquí! 🐷</span>
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.M157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+  <script>
+    (function () {
+      var WHATSAPP_NUMBER = "573332492934";
 
-<!-- ══ MODAL DE PEDIDO ══ -->
-<div class="modal-overlay" id="pedidoModal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closePedidoModal()">✕</button>
-    <div class="modal-header">
-      <h3>🐷 Hacer tu Pedido</h3>
-      <p>Completa la información y te enviaremos directo a WhatsApp</p>
-    </div>
-    <div class="modal-product" id="modalProduct">
-      <div class="modal-product-emoji">🐷</div>
-      <div class="modal-product-info">
-        <h4 id="modalProductName">Morcilla Delgada</h4>
-        <p id="modalProductType">Presentación clásica</p>
-      </div>
-    </div>
-    <div class="modal-input-group">
-      <label for="pedidoLibras">📊 ¿Cuántas libras deseas?</label>
-      <input type="number" id="pedidoLibras" placeholder="Ej: 2, 5, 10..." min="1" step="0.5">
-    </div>
-    <div class="modal-input-group">
-      <label for="pedidoDireccion">📍 Tu dirección de entrega</label>
-      <textarea id="pedidoDireccion" placeholder="Escribe tu dirección completa (barrio, calle, número...)"></textarea>
-    </div>
-    <div class="modal-input-group">
-      <label for="pedidoNombre">👤 Tu nombre</label>
-      <input type="text" id="pedidoNombre" placeholder="¿Cómo te llamas?">
-    </div>
-    <button class="modal-btn" onclick="enviarPedido()">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Enviar a WhatsApp
-    </button>
-    <p class="modal-note">💡 Al hacer clic, se abrirá WhatsApp con tu pedido listo para enviar</p>
-  </div>
-</div>
+      // Menú hamburguesa
+      var ham = document.getElementById("hamburger");
+      var mob = document.getElementById("mobileMenu");
+      if (ham && mob) {
+        ham.addEventListener("click", function () {
+          ham.classList.toggle("open");
+          mob.classList.toggle("open");
+        });
+      }
+      window.closeMobile = function () {
+        if (ham) ham.classList.remove("open");
+        if (mob) mob.classList.remove("open");
+      };
 
-<script>
-(function() {
-  'use strict';
+      // Header scroll
+      var header = document.getElementById("site-header");
+      window.addEventListener("scroll", function () {
+        if (!header) return;
+        if (window.scrollY > 70) {
+          header.style.background = "rgba(26,10,0,0.95)";
+          header.style.boxShadow = "0 2px 18px rgba(0,0,0,0.35)";
+        } else {
+          header.style.background = "linear-gradient(to bottom, rgba(26,10,0,0.95), transparent)";
+          header.style.boxShadow = "none";
+        }
+      });
 
-  // WhatsApp configurado
-  var WHATSAPP_NUMBER = '573332492934';
-  window.WHATSAPP_NUMBER = WHATSAPP_NUMBER;
+      // Scroll suave anclas
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var href = this.getAttribute("href");
+          if (!href || href === "#") return;
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.closeMobile();
+          }
+        });
+      });
 
-  // Modal de pedido
-  var modal = document.getElementById('pedidoModal');
-  var productName = document.getElementById('modalProductName');
-  var productType = document.getElementById('modalProductType');
+      // Slider productos (drag)
+      var productosGrid = document.getElementById("productosGrid");
+      var productosArrow = document.getElementById("productosArrow");
+      var isDragging = false;
+      var startX = 0;
+      var scrollStart = 0;
+      var dragMoved = false;
 
-  window.openPedidoModal = function(name, type) {
-    productName.textContent = name;
-    productType.textContent = type;
-    document.getElementById('pedidoLibras').value = '';
-    document.getElementById('pedidoDireccion').value = '';
-    document.getElementById('pedidoNombre').value = '';
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
+      function updateArrow() {
+        if (!productosGrid || !productosArrow) return;
+        var max = productosGrid.scrollWidth - productosGrid.clientWidth - 8;
+        productosArrow.style.opacity = productosGrid.scrollLeft >= max ? "0" : "1";
+      }
 
-  window.closePedidoModal = function() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  };
+      if (productosGrid) {
+        productosGrid.addEventListener("wheel", function (e) {
+          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            productosGrid.scrollLeft += e.deltaY;
+          }
+        }, { passive: false });
 
-  window.enviarPedido = function() {
-    var libras = document.getElementById('pedidoLibras').value.trim();
-    var direccion = document.getElementById('pedidoDireccion').value.trim();
-    var nombre = document.getElementById('pedidoNombre').value.trim();
-    
-    if (!libras || !direccion || !nombre) {
-      alert('🐷 Por favor completa todos los campos para hacer tu pedido.');
-      return;
-    }
+        productosGrid.addEventListener("mousedown", function (e) {
+          isDragging = true;
+          dragMoved = false;
+          startX = e.pageX - productosGrid.offsetLeft;
+          scrollStart = productosGrid.scrollLeft;
+          productosGrid.style.cursor = "grabbing";
+        });
 
-    var product = productName.textContent;
-    var tipo = productType.textContent;
-    
-    var message = '¡Hola! Soy ' + nombre + '.\n\n';
-    message += '🐷 *Quiero hacer un pedido de Rellena Tradicional*\n\n';
-    message += '📋 *Producto:* ' + product + ' (' + tipo + ')\n';
-    message += '📊 *Cantidad:* ' + libras + ' libras\n';
-    message += '📍 *Mi dirección es:* ' + direccion + '\n\n';
-    message += '💰 *Quiero cotizar ¿cuánto me cuestan ' + libras + ' de ' + product + '?*\n\n';
-    message += '¡Gracias! 🙌';
+        document.addEventListener("mousemove", function (e) {
+          if (!isDragging) return;
+          e.preventDefault();
+          var x = e.pageX - productosGrid.offsetLeft;
+          var walk = (x - startX) * 1.2;
+          if (Math.abs(walk) > 5) dragMoved = true;
+          productosGrid.scrollLeft = scrollStart - walk;
+          updateArrow();
+        });
 
-    var waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
-    window.open(waUrl, '_blank');
-    closePedidoModal();
-  };
+        document.addEventListener("mouseup", function () {
+          if (!isDragging) return;
+          isDragging = false;
+          productosGrid.style.cursor = "grab";
+        });
 
-  // Cerrar modal al hacer clic fuera
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      closePedidoModal();
-    }
-  });
+        productosGrid.addEventListener("click", function (e) {
+          if (dragMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+            dragMoved = false;
+          }
+        }, true);
 
-  // Cerrar con ESC
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closePedidoModal();
-    }
-  });
+        var touchStartX = 0;
+        var touchScrollStart = 0;
+        productosGrid.addEventListener("touchstart", function (e) {
+          touchStartX = e.touches[0].pageX;
+          touchScrollStart = productosGrid.scrollLeft;
+        }, { passive: true });
 
-  // Formulario enviado
-  if (window.location.search.includes('enviado=1') || document.referrer.includes('formsubmit.co')) {
-    var form = document.getElementById('contactForm');
-    var success = document.getElementById('formSuccess');
-    if (form && success) {
-      form.style.display = 'none';
-      success.classList.add('show');
-      setTimeout(function() { success.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300);
-    }
-  }
-  var formEl = document.getElementById('contactForm');
-  if (formEl) {
-    var nextInput = formEl.querySelector('input[name="_next"]');
-    if (nextInput) nextInput.value = window.location.origin + window.location.pathname + '?enviado=1#contacto';
-  }
+        productosGrid.addEventListener("touchmove", function (e) {
+          var dx = touchStartX - e.touches[0].pageX;
+          productosGrid.scrollLeft = touchScrollStart + dx;
+          updateArrow();
+        }, { passive: true });
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      var href = this.getAttribute('href');
-      if (href === '#') return;
-      var target = document.querySelector(href);
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth' }); }
-    });
-  });
+        productosGrid.addEventListener("scroll", updateArrow);
+      }
 
-  // Hamburger menu
-  var ham = document.getElementById('hamburger');
-  var mob = document.getElementById('mobileMenu');
-  if (ham && mob) {
-    ham.addEventListener('click', function() {
-      ham.classList.toggle('open');
-      mob.classList.toggle('open');
-    });
-  }
-  function closeMobile() {
-    if (ham) ham.classList.remove('open');
-    if (mob) mob.classList.remove('open');
-  }
-  window.closeMobile = closeMobile;
+      window.addEventListener("resize", updateArrow);
+      updateArrow();
 
-  // Scroll reveal
-  var revealEls = document.querySelectorAll('.feature-card, .producto-card, .contacto-dato, .pago-card, .domicilios-info, .wa-cta-box, .rellena-info-block, .zona-chip, .stat-item, .nosotros-feature-card');
-  revealEls.forEach(function(el) { el.classList.add('reveal'); });
+      // Modal de pedido
+      var modal = document.getElementById("pedidoModal");
+      var productName = document.getElementById("modalProductName");
+      var productType = document.getElementById("modalProductType");
 
-  // Stagger delays
-  document.querySelectorAll('.stat-item').forEach(function(el, i) {
-    el.style.transitionDelay = (i * 0.12) + 's';
-  });
-  document.querySelectorAll('.feature-card').forEach(function(el, i) {
-    el.style.transitionDelay = (i * 0.08) + 's';
-  });
-  document.querySelectorAll('.producto-card').forEach(function(el, i) {
-    el.style.transitionDelay = (i * 0.1) + 's';
-  });
-  document.querySelectorAll('.nosotros-feature-card').forEach(function(el, i) {
-    el.style.transitionDelay = (i * 0.1) + 's';
-  });
+      window.openPedidoModal = function (name, type) {
+        productName.value = name;
+        productType.value = type;
+        document.getElementById("pedidoLibras").value = "";
+        document.getElementById("pedidoDireccion").value = "";
+        document.getElementById("pedidoNombre").value = "";
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
 
-  function checkReveal() {
-    revealEls.forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 60) el.classList.add('visible');
-    });
-  }
-  window.addEventListener('scroll', checkReveal);
-  checkReveal();
+      window.closePedidoModal = function () {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      };
 
-  // Header scroll
-  var header = document.getElementById('site-header');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 80) {
-      header.style.background = 'rgba(26,10,0,0.97)';
-      header.style.backdropFilter = 'blur(10px)';
-      header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
-    } else {
-      header.style.background = 'linear-gradient(to bottom, rgba(26,10,0,0.95), transparent)';
-      header.style.boxShadow = 'none';
-    }
-  });
+      window.enviarPedido = function () {
+        var libras = document.getElementById("pedidoLibras").value.trim();
+        var direccion = document.getElementById("pedidoDireccion").value.trim();
+        var nombre = document.getElementById("pedidoNombre").value.trim();
 
-})();
-</script>
+        if (!libras || !direccion || !nombre) {
+          alert("Por favor completa todos los campos para hacer tu pedido.");
+          return;
+        }
+
+        var product = productName.value;
+        var tipo = productType.value;
+
+        var msg = "Hola, soy " + nombre + ".%0A%0A";
+        msg += "Quiero hacer un pedido de rellena.%0A";
+        msg += "Producto: " + product + " (" + tipo + ").%0A";
+        msg += "Cantidad: " + libras + " libras.%0A";
+        msg += "Direccion: " + direccion + ".%0A%0A";
+        msg += "Entiendo que el pago de la rellena es 100% antes del envio.%0A";
+        msg += "Desde 10 libras, el envio puede pagarse por mitades.";
+
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+        closePedidoModal();
+      };
+
+      if (modal) {
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closePedidoModal();
+        });
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closePedidoModal();
+      });
+
+      // ─────────── VERIFICADOR DE ZONA (CORREGIDO) ───────────
+      // Lista original de zonas disponibles (sin Usme ni Bicentenario)
+      var zonasDisponibles = [
+        "bogotá", "bogota", "soacha", "bosa", "kennedy", "fontibon", "fontibón",
+        "engativa", "engativá", "chapinero", "usaquén", "usaquen", "puente aranda",
+        "barrios unidos", "teusaquillo", "antonio nariño", "rafael uribe", "ciudad bolivar",
+        "san cristobal", "tunjuelito", "mártires", "santa fe", "la candelaria",
+        "sumapaz", "mosquera", "madrid", "funza", "cajica", "chía", "chia"
+      ];
+
+      // Palabras que indican NO disponibilidad (usuario pide Usme y Bicentenario)
+      var zonasNoDisponibles = ["usme", "bicentenario"];
+
+      window.verificarZona = function () {
+        var input = document.getElementById("mapaInput");
+        var estado = document.getElementById("mapaEstado");
+        var direccion = input.value.trim();
+
+        if (!direccion) {
+          estado.className = "mapa-estado no-disponible";
+          estado.innerHTML = "⚠️ Por favor ingresa una dirección para verificar.";
+          return;
+        }
+
+        var dirLower = direccion.toLowerCase();
+
+        // Primero verificar si es zona NO disponible
+        var esNoDisponible = zonasNoDisponibles.some(function(z) {
+          return dirLower.includes(z);
+        });
+
+        if (esNoDisponible) {
+          estado.className = "mapa-estado no-disponible";
+          estado.innerHTML = "❌ ¡Lo siento! No hacemos domicilios en tu zona, sin embargo escríbenos por WhatsApp y te ayudamos con otras opciones. <a href='https://wa.me/573332492934?text=Hola!%20Quiero%20consultar%20sobre%20domicilio%20a%20" + encodeURIComponent(direccion) + "' target='_blank' style='color:#e74c3c;text-decoration:underline;margin-left:6px;'>Consultar →</a>";
+          return;
+        }
+
+        // Si no es no disponible, verificar si está en la lista de disponibles
+        var encontrado = zonasDisponibles.some(function(z) {
+          return dirLower.includes(z);
+        });
+
+        if (encontrado) {
+          estado.className = "mapa-estado disponible";
+          estado.innerHTML = "✅ ¡Genial! Hacemos domicilios en tu zona. <a href='https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20a%20" + encodeURIComponent(direccion) + "' target='_blank' style='color:#25d366;text-decoration:underline;margin-left:6px;'>Pedir ahora →</a>";
+        } else {
+          estado.className = "mapa-estado no-disponible";
+          estado.innerHTML = "❌ Tu zona podría estar fuera de cobertura. Escríbenos por WhatsApp y verificamos. <a href='https://wa.me/573332492934?text=Hola!%20Quiero%20saber%20si%20hacen%20domicilio%20a%20" + encodeURIComponent(direccion) + "' target='_blank' style='color:#e74c3c;text-decoration:underline;margin-left:6px;'>Consultar →</a>";
+        }
+      };
+
+    })();
+  </script>
 </body>
 </html>
+
+ 
+ 
