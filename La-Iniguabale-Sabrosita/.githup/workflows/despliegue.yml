@@ -3,7 +3,7 @@ name: Despliegue Automático a InfinityFree
 on:
   push:
     branches:
-      - main  # <--- Si tu rama se llama "master" o "practicas", cámbialo aquí
+      - principal  # <--- Si tu rama se llama "master" o "practicas", cámbialo aquí
 
 jobs:
   web-deploy:
