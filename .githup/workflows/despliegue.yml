@@ -3,7 +3,7 @@ name: Despliegue Automático a InfinityFree
 on:
   push:
     branches:
-      - main  # <--- Si tu rama se llama "master" o "practicas", cámbialo aquí
+      - main
 
 jobs:
   web-deploy:
@@ -19,4 +19,6 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /htdocs/  # <--- InfinityFree usa la carpeta htdocs obligatoriamente
+        server-dir: /htdocs/
+        timeout: 60000        # <--- Esto le da más tiempo para que no de Timeout
+        dangerous-clean-slate: false
