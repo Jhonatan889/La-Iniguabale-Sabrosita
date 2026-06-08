@@ -1,0 +1,14 @@
+{
+    "remotePath": "/htdocs",
+    "host": "ftpupload.net",
+    "username": "if0_41502212",
+    "password": "Jhonca2511",
+    "port": 21,
+    "uploadOnSave": true,
+    "watch": [],
+    "ignore": [
+        "\\.git",
+        "\\.vscode",
+        "\\.github"
+    ]
+}

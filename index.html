@@ -33,6 +33,7 @@
       overflow-x: hidden;
     }
 
+    /* === HEADER === */
     header {
       display: flex;
       justify-content: space-between;
@@ -134,6 +135,7 @@
       gap: 10px;
     }
 
+    /* === HERO === */
     .hero {
       min-height: 100vh;
       position: relative;
@@ -149,8 +151,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.62);
+      filter: brightness(0.62) saturate(1.15);
+      transition: transform 8s ease;
     }
+    .hero:hover .hero-bg { transform: scale(1.05); }
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -160,6 +164,11 @@
       position: relative;
       z-index: 2;
       max-width: 720px;
+      animation: fadeInUp 1s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .hero-badge {
       display: inline-block;
@@ -220,7 +229,7 @@
       background: var(--verde-wa);
       color: #fff;
     }
-    .btn-whatsapp:hover { background: #1ca855; transform: translateY(-2px); }
+    .btn-whatsapp:hover { background: #1ca855; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); }
     .btn-outline {
       border-color: var(--dorado);
       color: var(--dorado);
@@ -232,6 +241,7 @@
       transform: translateY(-2px);
     }
 
+    /* === SECCIONES === */
     .section { padding: 80px 30px; }
     .section-header { text-align: center; margin-bottom: 42px; }
     .section-tag {
@@ -262,6 +272,7 @@
       font-size: 1.02rem;
     }
 
+    /* === NOSOTROS === */
     #nosotros {
       background: linear-gradient(180deg, transparent, rgba(192,57,43,0.05), transparent);
       padding-bottom: 56px;
@@ -299,10 +310,8 @@
     }
     .nosotros-texto strong { color: var(--dorado); }
 
-    .stats-section {
-      padding-top: 10px;
-      padding-bottom: 24px;
-    }
+    /* === STATS === */
+    .stats-section { padding-top: 10px; padding-bottom: 24px; }
     .stats-strip {
       max-width: 1200px;
       margin: 0 auto;
@@ -328,7 +337,6 @@
       color: var(--gris);
       font-size: 0.82rem;
     }
-
     .stat-logo-wrap {
       display: flex;
       justify-content: center;
@@ -368,10 +376,8 @@
       z-index: 1;
     }
 
-    .cards-section {
-      padding-top: 10px;
-      padding-bottom: 60px;
-    }
+    /* === CARDS === */
+    .cards-section { padding-top: 10px; padding-bottom: 60px; }
     .cards-row {
       max-width: 1200px;
       margin: 0 auto;
@@ -385,6 +391,13 @@
       border-radius: 15px;
       padding: 24px 18px;
       text-align: center;
+      transition: all 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--dorado);
+      box-shadow: 0 12px 30px rgba(212, 160, 23, 0.15);
+      background: rgba(255, 255, 255, 0.05);
     }
     .card .icon { font-size: 1.9rem; margin-bottom: 10px; }
     .card h3 {
@@ -395,6 +408,7 @@
     }
     .card p { color: var(--gris); line-height: 1.6; font-size: 0.93rem; }
 
+    /* === PRODUCTOS === */
     #productos { background: linear-gradient(180deg, transparent, rgba(192,57,43,0.05), transparent); }
 
     .productos-top {
@@ -433,20 +447,10 @@
       cursor: grab;
       user-select: none;
     }
-    .productos-grid:active {
-      cursor: grabbing;
-    }
-    .productos-grid::-webkit-scrollbar {
-      height: 6px;
-    }
-    .productos-grid::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.05);
-      border-radius: 999px;
-    }
-    .productos-grid::-webkit-scrollbar-thumb {
-      background: var(--dorado);
-      border-radius: 999px;
-    }
+    .productos-grid:active { cursor: grabbing; }
+    .productos-grid::-webkit-scrollbar { height: 6px; }
+    .productos-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 999px; }
+    .productos-grid::-webkit-scrollbar-thumb { background: var(--dorado); border-radius: 999px; }
 
     .producto-card {
       min-width: min(360px, 85vw);
@@ -460,12 +464,27 @@
       display: flex;
       flex-direction: column;
       pointer-events: auto;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .producto-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--dorado);
+      box-shadow: 0 20px 50px rgba(212, 160, 23, 0.25);
     }
     .producto-img-wrap {
       position: relative;
       width: 100%;
       height: 230px;
       overflow: hidden;
+      background: #1a0a00;
+    }
+    .producto-img-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(192, 57, 43, 0.1), rgba(212, 160, 23, 0.1));
+      z-index: 1;
+      pointer-events: none;
     }
     .producto-img-wrap img {
       width: 100%;
@@ -474,11 +493,41 @@
       display: block;
       draggable: false;
       -webkit-user-drag: none;
+      filter: saturate(1.1) contrast(1.05);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .producto-card:hover .producto-img-wrap img {
+      transform: scale(1.1);
+      filter: saturate(1.25) contrast(1.1);
     }
     .producto-img-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(to bottom, transparent 35%, rgba(26, 5, 0, 0.9) 100%);
+      z-index: 2;
+    }
+    .producto-img-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      background: rgba(212, 160, 23, 0.95);
+      color: var(--oscuro);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.3s;
+    }
+    .producto-card:hover .producto-img-badge {
+      opacity: 1;
+      transform: scale(1);
     }
     .producto-img-title {
       position: absolute;
@@ -536,14 +585,14 @@
       transition: 0.3s;
       cursor: pointer;
     }
-    .btn-consultar:hover { background: #b8860b; }
+    .btn-consultar:hover { background: #b8860b; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(212, 160, 23, 0.3); }
 
+    /* === DOMICILIOS === */
     .domicilios {
       background: rgba(255, 255, 255, 0.02);
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-
     .domicilios-grid {
       max-width: 1100px;
       margin: 0 auto;
@@ -621,6 +670,7 @@
       transition: 0.3s;
     }
     .btn-verificar:hover { background: #b8860b; }
+
     .mapa-estado {
       display: none;
       border-radius: 10px;
@@ -651,12 +701,7 @@
       background: rgba(0,0,0,0.3);
       position: relative;
     }
-    .mapa-frame-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
+    .mapa-frame-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
     .mapa-zonas-chips {
       display: flex;
       flex-wrap: wrap;
@@ -700,95 +745,246 @@
       margin-top: 2px;
     }
 
+    /* === CONTACTO MEJORADO === */
+    #contacto {
+      background: linear-gradient(180deg, transparent, rgba(192, 57, 43, 0.08) 50%, transparent);
+      position: relative;
+      overflow: hidden;
+    }
+    #contacto::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 160, 23, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #contacto .section-header { position: relative; z-index: 2; }
+    #contacto .section-header h2 {
+      background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
     .contacto-grid {
       max-width: 1080px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 26px;
+      position: relative;
+      z-index: 2;
     }
     .contacto-card {
-      border: 1px solid rgba(212, 160, 23, 0.18);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 24px;
+      border: 2px solid rgba(212, 160, 23, 0.25);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(26, 10, 0, 0.85), rgba(44, 13, 2, 0.6));
+      padding: 28px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(212, 160, 23, 0.1);
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .contacto-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dorado), var(--dorado-claro), var(--dorado));
+    }
+    .contacto-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--dorado);
+      box-shadow: 0 20px 50px rgba(212, 160, 23, 0.2), inset 0 1px 0 rgba(212, 160, 23, 0.2);
     }
     .contacto-card h3 {
       font-family: 'Playfair Display', serif;
       color: var(--dorado);
-      font-size: 1.7rem;
-      margin-bottom: 12px;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .form-group { margin-bottom: 14px; }
+    .contacto-card h3 .card-icon {
+      font-size: 1.6rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(212, 160, 23, 0.2), rgba(192, 57, 43, 0.2));
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-group { margin-bottom: 16px; }
     .form-group label {
       display: block;
-      color: var(--gris);
+      color: var(--dorado-claro);
       font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
+      letter-spacing: 1.2px;
+      margin-bottom: 6px;
+      font-weight: 600;
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      border: 1px solid rgba(212, 160, 23, 0.2);
+      background: rgba(255, 255, 255, 0.05);
       color: #fff;
-      padding: 11px 12px;
+      padding: 12px 14px;
       outline: none;
       font-family: 'Lato', sans-serif;
-      font-size: 0.93rem;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--dorado);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.3);
     }
     .form-group textarea { min-height: 110px; resize: vertical; }
     .btn-submit {
       width: 100%;
       border: 0;
-      border-radius: 10px;
-      padding: 13px;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 0.92rem;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
       background: linear-gradient(135deg, var(--rojo), #e74c3c);
       cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(192, 57, 43, 0.5);
+    }
+    .btn-submit::after {
+      content: "→";
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+    }
+    .btn-submit:hover::after { transform: translateX(4px); }
+
     .dato {
       display: flex;
       align-items: center;
-      gap: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 10px;
-      background: rgba(255, 255, 255, 0.03);
-    }
-    .dato strong { display: block; color: #fff; }
-    .dato span { color: var(--gris); font-size: 0.92rem; }
-    .wa-cta {
-      margin-top: 14px;
+      gap: 14px;
+      border: 1px solid rgba(212, 160, 23, 0.15);
       border-radius: 14px;
-      border: 1px solid rgba(37, 211, 102, 0.35);
-      background: rgba(37, 211, 102, 0.09);
-      padding: 16px;
-      text-align: center;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: all 0.3s;
     }
-    .wa-cta h4 { color: var(--verde-wa); margin-bottom: 6px; }
-    .wa-cta p { color: var(--gris); margin-bottom: 10px; font-size: 0.93rem; }
+    .dato:hover {
+      background: rgba(212, 160, 23, 0.08);
+      border-color: rgba(212, 160, 23, 0.4);
+      transform: translateX(4px);
+    }
+    .dato-icon {
+      font-size: 1.4rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(212, 160, 23, 0.2), rgba(192, 57, 43, 0.2));
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .dato-content { flex: 1; }
+    .dato strong {
+      display: block;
+      color: var(--dorado);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+    .dato span { color: var(--gris); font-size: 0.9rem; }
+    .dato a {
+      color: var(--texto);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .dato a:hover { color: var(--dorado); }
+
+    .wa-cta {
+      margin-top: 18px;
+      border-radius: 16px;
+      border: 2px solid rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .wa-cta::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, transparent 60%);
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+    .wa-cta-content { position: relative; z-index: 2; }
+    .wa-cta h4 {
+      color: var(--verde-wa);
+      margin-bottom: 6px;
+      font-size: 1.15rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .wa-cta p { color: var(--gris); margin-bottom: 14px; font-size: 0.93rem; }
     .wa-cta a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       text-decoration: none;
-      background: var(--verde-wa);
+      background: linear-gradient(135deg, var(--verde-wa), #1da851);
       color: #fff;
       border-radius: 999px;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+    .wa-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
     }
 
+    /* === FOOTER === */
     footer {
       margin-top: 30px;
       border-top: 1px solid rgba(212, 160, 23, 0.16);
@@ -817,7 +1013,9 @@
       text-decoration: none;
       margin-left: 16px;
       font-size: 0.9rem;
+      transition: color 0.3s;
     }
+    .footer-links a:hover { color: var(--dorado); }
 
     .footer-bottom {
       max-width: 1200px;
@@ -848,7 +1046,9 @@
     .footer-dev-contact a {
       color: var(--gris);
       text-decoration: none;
+      transition: color 0.3s;
     }
+    .footer-dev-contact a:hover { color: var(--dorado); }
     .footer-dev-contact svg { width: 15px; height: 15px; }
     .footer-instagram {
       display: inline-flex;
@@ -862,9 +1062,12 @@
       font-weight: 700;
       background: linear-gradient(45deg, #f09433 0%, #e6683c 24%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
       box-shadow: 0 6px 16px rgba(220, 39, 67, 0.35);
+      transition: transform 0.3s;
     }
+    .footer-instagram:hover { transform: translateY(-2px); }
     .footer-instagram svg { width: 16px; height: 16px; fill: #fff; }
 
+    /* === WHATSAPP FLOAT === */
     .whatsapp-float {
       position: fixed;
       right: 24px;
@@ -881,11 +1084,7 @@
       box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
       animation: waPulse 2.3s infinite;
     }
-    .whatsapp-float svg {
-      width: 33px;
-      height: 33px;
-      fill: #fff;
-    }
+    .whatsapp-float svg { width: 33px; height: 33px; fill: #fff; }
     .wa-float-tip {
       position: absolute;
       right: 72px;
@@ -922,6 +1121,7 @@
       100% { box-shadow: 0 4px 16px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); }
     }
 
+    /* === MODAL === */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -988,7 +1188,6 @@
       outline: none;
     }
     .modal-input textarea { min-height: 90px; resize: vertical; }
-
     .modal-btn {
       width: 100%;
       border: 0;
@@ -1003,14 +1202,12 @@
       margin-top: 4px;
     }
 
+    /* === RESPONSIVE === */
     @media (max-width: 1050px) {
       .cards-row { grid-template-columns: repeat(2, 1fr); }
       .contacto-grid { grid-template-columns: 1fr; }
       .domicilios-grid { grid-template-columns: 1fr; }
-      .footer-top {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
       .footer-links a { margin: 0 8px; }
     }
 
@@ -1037,6 +1234,8 @@
       .footer-logo { font-size: 1.2rem; }
       .mapa-input-row { flex-direction: column; }
       .mapa-frame-wrap { height: 220px; }
+      .contacto-card { padding: 22px 18px; }
+      .contacto-card h3 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -1066,7 +1265,7 @@
   </header>
 
   <section class="hero" id="inicio">
-    <img class="hero-bg" src="./Delgada.png" alt="Rellena tradicional" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1900&q=80';" />
+    <img class="hero-bg" src="./Delgada.png" alt="Rellena tradicional" onerror="this.src='https://images.pexels.com/photos/37135622/pexels-photo-37135622.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200';" />
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
@@ -1161,8 +1360,9 @@
     <div class="productos-grid" id="productosGrid">
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./Delgada.png" alt="Rellena Delgada" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="./Delgada.png" alt="Rellena Delgada" onerror="this.src='https://images.pexels.com/photos/37058023/pexels-photo-37058023.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200';" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Presentación clásica</span>
             <h3>Rellena Delgada</h3>
@@ -1176,8 +1376,9 @@
 
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./rellena-obispo.png" alt="Rellena Gruesa" onerror="this.src='https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="./rellenafrita.png" alt="Rellena Gruesa" onerror="this.src='https://images.pexels.com/photos/31372367/pexels-photo-31372367.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200';" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Presentación premium</span>
             <h3>Rellena Gruesa</h3>
@@ -1191,75 +1392,80 @@
 
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./rellenafrita.png" alt="Rellena frita" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="./rellenaprovocativa.png" alt="Rellena frita" onerror="this.src='https://images.pexels.com/photos/37049971/pexels-photo-37049971.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200';" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Galería</span>
             <h3>Rellena Frita</h3>
           </div>
         </div>
         <div class="producto-info">
-          <p>Foto adicional para mostrar variedad visual del producto.</p>
+          <p>Perfecta para acompañar todsa tus comidas.</p>
           <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Rellena frita')">Hacer pedido</a>
         </div>
       </article>
 
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./rellenaprovocativa.png" alt="Rellena provocativa" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="https://images.pexels.com/photos/37135635/pexels-photo-37135635.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Rellena provocativa" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Galería</span>
-            <h3>Rellena Provocativa</h3>
+            <h3>Rellena Para Negocios</h3>
           </div>
         </div>
         <div class="producto-info">
-          <p>Imagen adicional para reforzar impacto visual al deslizar.</p>
+          <p>Perfecta para llamar a tus Clientes a las puertas de tu Negocio</p>
           <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Rellena provocativa')">Hacer pedido</a>
         </div>
       </article>
 
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./morcilladeli.png" alt="Morcilla deli" onerror="this.src='https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="https://images.pexels.com/photos/27643041/pexels-photo-27643041.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Morcilla deli" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Galería</span>
-            <h3>Morcilla Deli</h3>
+            <h3>Rellena "Sin Sangre"</h3>
           </div>
         </div>
         <div class="producto-info">
-          <p>Fotografía adicional para mantener interés del cliente.</p>
+          <p>Para los clientes que no les gusta con Sangre</p>
           <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Gruesa', 'Morcilla deli')">Hacer pedido</a>
         </div>
       </article>
 
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./Morcil.png" alt="Morcil" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="https://images.pexels.com/photos/13639919/pexels-photo-13639919.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Morcil" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Galería</span>
-            <h3>Morcil</h3>
+            <h3>Rellena Como Acompañamiento a tus Comidas</h3>
           </div>
         </div>
         <div class="producto-info">
-          <p>Otra foto de apoyo para completar el carrusel de productos.</p>
+          <p>La mejor para tus Desyunos y cenas, sorpredne a tus amigos y Familiares con nuestra sabrosita rellena</p>
           <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Gruesa', 'Morcil')">Hacer pedido</a>
         </div>
       </article>
 
       <article class="producto-card">
         <div class="producto-img-wrap">
-          <img src="./Pedacito.png" alt="Rellena en pedacitos" onerror="this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=1200&q=80';" draggable="false" />
+          <img src="./Pedacito.png" alt="Rellena en pedacitos" onerror="this.src='https://images.pexels.com/photos/37128347/pexels-photo-37128347.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200';" draggable="false" />
           <div class="producto-img-overlay"></div>
+          <div class="producto-img-badge">🔍</div>
           <div class="producto-img-title">
             <span class="producto-chip">Foto adicional</span>
             <h3>Rellena en Pedacitos</h3>
           </div>
         </div>
         <div class="producto-info">
-          <p>Foto adicional para mostrar otra presentación visual del producto.</p>
+          <p>Perfecta para que las comas individualmente y bajar tus antojos de algo sabroso</p>
           <a href="javascript:void(0)" class="btn-consultar" onclick="openPedidoModal('Rellena Delgada', 'Foto adicional')">Hacer pedido</a>
         </div>
       </article>
@@ -1274,7 +1480,6 @@
     </div>
 
     <div class="domicilios-grid">
-      <!-- Mapa interactivo (columna izquierda) -->
       <div class="mapa-box">
         <h3>📍 ¿Llegamos a tu zona?</h3>
         <p>Ingresa tu dirección para verificar si tenemos cobertura de domicilio en tu sector.</p>
@@ -1292,7 +1497,6 @@
         <div class="mapa-estado" id="mapaEstado"></div>
 
         <div class="mapa-frame-wrap">
-          <!-- Mapa estático sin API key (no causa error) -->
           <iframe
             id="mapaIframe"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127324.30345688896!2d-74.24735385!3d4.6482837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2sBogot%C3%A1!5e0!3m2!1ses!2sco!4v1710000000000"
@@ -1317,7 +1521,6 @@
         </div>
       </div>
 
-      <!-- Tarjeta de condiciones (columna derecha) -->
       <div class="domicilios-box">
         <h3>Condiciones de pago y envío</h3>
         <p>Para confirmar y despachar el pedido:</p>
@@ -1331,50 +1534,88 @@
 
   <section class="section" id="contacto">
     <div class="section-header">
-      <div class="section-tag">Escríbenos</div>
+      <div class="section-tag">💬 Estamos para atenderte</div>
       <h2>Contáctanos</h2>
       <div class="divider"></div>
-      <p>¿Tienes preguntas o quieres hacer un pedido? Te atendemos rápido.</p>
+      <p>¿Tienes preguntas o quieres hacer un pedido? Te respondemos rápido por el medio que prefieras.</p>
     </div>
 
     <div class="contacto-grid">
       <div class="contacto-card">
-        <h3>Formulario</h3>
+        <h3>
+          <span class="card-icon">📝</span>
+          Envíanos un mensaje
+        </h3>
         <form id="contactForm" action="https://formsubmit.co/la.inigualablesabrosita@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Nuevo mensaje - La Sabrosita" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" required />
+            <label for="nombre">👤 Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required />
           </div>
           <div class="form-group">
-            <label for="email">Correo</label>
-            <input id="email" name="email" type="email" required />
+            <label for="email">📧 Correo</label>
+            <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
           </div>
           <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input id="telefono" name="telefono" type="tel" required />
+            <label for="telefono">📱 Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="300 123 4567" required />
           </div>
           <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
+            <label for="mensaje">💬 Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué te podemos ayudar..." required></textarea>
           </div>
           <button type="submit" class="btn-submit">Enviar mensaje</button>
         </form>
       </div>
 
       <div class="contacto-card">
-        <h3>Atención directa</h3>
-        <div class="dato"><div>📧</div><div><strong>Correo</strong><span>la.inigualablesabrosita@gmail.com</span></div></div>
-        <div class="dato"><div>📱</div><div><strong>WhatsApp</strong><span>333 249 2934</span></div></div>
-        <div class="dato"><div>📍</div><div><strong>Cobertura</strong><span>Bogotá, Soacha y alrededores</span></div></div>
-        <div class="dato"><div>🕒</div><div><strong>Horario</strong><span>Lunes a Sábado: 7am - 7pm</span></div></div>
+        <h3>
+          <span class="card-icon">⚡</span>
+          Atención directa
+        </h3>
+        
+        <div class="dato">
+          <div class="dato-icon">📧</div>
+          <div class="dato-content">
+            <strong>Correo electrónico</strong>
+            <span><a href="mailto:la.inigualablesabrosita@gmail.com">la.inigualablesabrosita@gmail.com</a></span>
+          </div>
+        </div>
+        
+        <div class="dato">
+          <div class="dato-icon">📱</div>
+          <div class="dato-content">
+            <strong>WhatsApp</strong>
+            <span><a href="https://wa.me/573332492934" target="_blank">333 249 2934</a></span>
+          </div>
+        </div>
+        
+        <div class="dato">
+          <div class="dato-icon">📍</div>
+          <div class="dato-content">
+            <strong>Zona de cobertura</strong>
+            <span>Bogotá, Soacha y alrededores</span>
+          </div>
+        </div>
+        
+        <div class="dato">
+          <div class="dato-icon">🕒</div>
+          <div class="dato-content">
+            <strong>Horario de atención</strong>
+            <span>Lunes a Sábado · 7:00 AM - 7:00 PM</span>
+          </div>
+        </div>
 
         <div class="wa-cta">
-          <h4>¿Prefieres WhatsApp?</h4>
-          <p>Haz tu pedido de forma inmediata.</p>
-          <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional" target="_blank">Chatear por WhatsApp</a>
+          <div class="wa-cta-content">
+            <h4>¿Prefieres respuesta inmediata?</h4>
+            <p>Haz tu pedido directo por WhatsApp y te atendemos al instante.</p>
+            <a href="https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20Rellena%20Tradicional" target="_blank">
+              💬 Chatear por WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1601,24 +1842,13 @@
         msg += "Producto: " + product + " (" + tipo + ").%0A";
         msg += "Cantidad: " + libras + " libras.%0A";
         msg += "Direccion: " + direccion + ".%0A%0A";
-        msg += "Entiendo que el pago de la rellena es 100% antes del envio.%0A";
-        msg += "Desde 10 libras, el envio puede pagarse por mitades.";
+        msg += "Entiendo que el pago de la rellena es el 50% antes del envio.";
 
         window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
         closePedidoModal();
       };
 
-      if (modal) {
-        modal.addEventListener("click", function (e) {
-          if (e.target === modal) closePedidoModal();
-        });
-      }
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closePedidoModal();
-      });
-
-      // ─────────── VERIFICADOR DE ZONA (CORREGIDO) ───────────
-      // Lista original de zonas disponibles (sin Usme ni Bicentenario)
+      // VERIFICADOR DE ZONA
       var zonasDisponibles = [
         "bogotá", "bogota", "soacha", "bosa", "kennedy", "fontibon", "fontibón",
         "engativa", "engativá", "chapinero", "usaquén", "usaquen", "puente aranda",
@@ -1626,8 +1856,6 @@
         "san cristobal", "tunjuelito", "mártires", "santa fe", "la candelaria",
         "sumapaz", "mosquera", "madrid", "funza", "cajica", "chía", "chia"
       ];
-
-      // Palabras que indican NO disponibilidad (usuario pide Usme y Bicentenario)
       var zonasNoDisponibles = ["usme", "bicentenario"];
 
       window.verificarZona = function () {
@@ -1638,40 +1866,40 @@
         if (!direccion) {
           estado.className = "mapa-estado no-disponible";
           estado.innerHTML = "⚠️ Por favor ingresa una dirección para verificar.";
+          estado.style.display = "flex";
           return;
         }
 
         var dirLower = direccion.toLowerCase();
-
-        // Primero verificar si es zona NO disponible
-        var esNoDisponible = zonasNoDisponibles.some(function(z) {
-          return dirLower.includes(z);
-        });
+        var esNoDisponible = zonasNoDisponibles.some(function(z) { return dirLower.includes(z); });
 
         if (esNoDisponible) {
           estado.className = "mapa-estado no-disponible";
-          estado.innerHTML = "❌ ¡Lo siento! No hacemos domicilios en tu zona, sin embargo escríbenos por WhatsApp y te ayudamos con otras opciones. <a href='https://wa.me/573332492934?text=Hola!%20Quiero%20consultar%20sobre%20domicilio%20a%20" + encodeURIComponent(direccion) + "' target='_blank' style='color:#e74c3c;text-decoration:underline;margin-left:6px;'>Consultar →</a>";
+          estado.innerHTML = "❌ ¡Lo siento! No hacemos domicilios en tu zona (Usme/Bicentenario), escríbenos por WhatsApp para coordinar otro punto.";
+          estado.style.display = "flex";
           return;
         }
 
-        // Si no es no disponible, verificar si está en la lista de disponibles
-        var encontrado = zonasDisponibles.some(function(z) {
-          return dirLower.includes(z);
-        });
-
+        var encontrado = zonasDisponibles.some(function(z) { return dirLower.includes(z); });
         if (encontrado) {
           estado.className = "mapa-estado disponible";
           estado.innerHTML = "✅ ¡Genial! Hacemos domicilios en tu zona. <a href='https://wa.me/573332492934?text=Hola!%20Quiero%20hacer%20un%20pedido%20a%20" + encodeURIComponent(direccion) + "' target='_blank' style='color:#25d366;text-decoration:underline;margin-left:6px;'>Pedir ahora →</a>";
         } else {
           estado.className = "mapa-estado no-disponible";
-          estado.innerHTML = "❌ Tu zona podría estar fuera de cobertura. Escríbenos por WhatsApp y verificamos. <a href='https://wa.me/573332492934?text=Hola!%20Quiero%20saber%20si%20hacen%20domicilio%20a%20" + encodeURIComponent(direccion) + "' target='_blank' style='color:#e74c3c;text-decoration:underline;margin-left:6px;'>Consultar →</a>";
+          estado.innerHTML = "❌ Tu zona podría estar fuera de cobertura. Consúltanos por WhatsApp.";
         }
+        estado.style.display = "flex";
       };
 
+      if (modal) {
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closePedidoModal();
+        });
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closePedidoModal();
+      });
     })();
   </script>
 </body>
 </html>
-
- 
- 
